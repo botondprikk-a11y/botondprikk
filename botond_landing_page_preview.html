@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Botond Prikk • Személyi edzés / Online edzés</title>
+  <meta name="description" content="Modern, letisztult landing page személyi és online edzés jelentkezéshez. Fogyás, életmódváltás, izomtömeg-növelés." />
+
+  <!-- Offline-friendly: system font stack (no external requests) -->
+  <style>
+    :root{
+      --bg:#07070A;
+      --panel:#0D0D12;
+      --text:#F2F2F7;
+      --muted:#B7B7C7;
+      --border: rgba(255,255,255,.10);
+      --purple:#9B5CFF;
+      --purple2:#C66BFF;
+      --purpleGlow: rgba(155,92,255,.35);
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{
+      background: transparent;
+      color:var(--text);
+      line-height:1.55;
+      letter-spacing: .1px;
+      position: relative;
+    }
+
+    /* Background layer (robust in iframes / offline preview) */
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(155,92,255,.18), transparent 55%),
+        radial-gradient(700px 450px at 85% 15%, rgba(198,107,255,.12), transparent 60%),
+        radial-gradient(900px 600px at 50% 110%, rgba(155,92,255,.10), transparent 60%),
+        var(--bg);
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .container{ width:min(var(--max), 92vw); margin:0 auto; }
+    .stack{ display:flex; flex-direction:column; gap: 18px; }
+
+    /* Top bar */
+    .topbar{
+      position: sticky; top:0;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(7,7,10,.75), rgba(7,7,10,.45));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      z-index: 50;
+    }
+    .topbar .inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+    }
+    .brand{ display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.5px; }
+    .mark{
+      width:12px; height:12px; border-radius:4px;
+      background: linear-gradient(135deg, var(--purple), var(--purple2));
+      box-shadow: 0 0 0 6px rgba(155,92,255,.12);
+    }
+    .nav{ display:flex; align-items:center; gap:16px; color: var(--muted); font-size: 14px; }
+    .nav a{ padding: 8px 10px; border-radius: 10px; }
+    .nav a:hover{ background: rgba(255,255,255,.06); color: var(--text); }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      border-radius: 999px;
+      padding: 12px 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-weight: 600;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.18); }
+    .btn:active{ transform: translateY(0px); }
+    .btn-primary{
+      background: linear-gradient(135deg, var(--purple), var(--purple2));
+      border-color: transparent;
+      box-shadow: 0 10px 30px var(--purpleGlow);
+      color:#0A0A0F;
+    }
+    .btn-primary:hover{ filter: brightness(1.03); }
+    .btn-primary:focus, .btn:focus{ outline: 2px solid rgba(155,92,255,.65); outline-offset: 3px; }
+
+    /* Sections */
+    section{ padding: 72px 0; }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .card.pad{ padding: 26px; }
+
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:10px;
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+    }
+    .dot{ width:8px; height:8px; border-radius:99px; background: var(--purple2); box-shadow: 0 0 18px rgba(198,107,255,.65); }
+
+    /* HERO */
+    .hero{ padding: 66px 0 36px; }
+    .heroGrid{ display:grid; grid-template-columns: 1.15fr .85fr; gap: 26px; align-items: stretch; }
+    h1{
+      margin: 14px 0 10px;
+      font-size: clamp(30px, 4.2vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -1.2px;
+    }
+    .lead{ margin: 0; color: var(--muted); font-size: clamp(16px, 1.55vw, 18px); max-width: 56ch; }
+    .heroActions{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 20px; }
+    .mini{ margin-top: 14px; color: rgba(242,242,247,.72); font-size: 13px; }
+    .mini b{ color: var(--text); font-weight: 600; }
+
+    .statGrid{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .stat{
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.18);
+    }
+    .stat .k{ font-size: 12px; color: var(--muted); }
+    .stat .v{ font-size: 18px; font-weight: 700; margin-top: 6px; letter-spacing: -0.3px; }
+    .accentLine{ height: 1px; width: 100%; background: linear-gradient(90deg, transparent, rgba(155,92,255,.45), transparent); margin: 18px 0; }
+
+    /* Bullets */
+    .steps{ margin: 12px 0 0; padding-left: 18px; color: rgba(242,242,247,.88); }
+    .steps li{ margin: 8px 0; }
+
+    details.faq{ border: 1px solid rgba(255,255,255,.10); border-radius: 16px; padding: 14px; background: rgba(255,255,255,.03); }
+    details.faq + details.faq{ margin-top: 12px; }
+    details.faq summary{ cursor:pointer; font-weight: 600; color: var(--text); list-style: none; }
+    details.faq summary::-webkit-details-marker{ display:none; }
+    details.faq summary:after{ content:"+"; float:right; color: rgba(198,107,255,.95); }
+    details.faq[open] summary:after{ content:"–"; }
+    details.faq p{ margin: 10px 0 0; color: var(--muted); }
+
+    .bullets{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 0; padding:0; list-style:none; }
+    .bullets li{ display:flex; gap:12px; padding: 14px; border-radius: 16px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.03); }
+    .tick{
+      width: 22px; height: 22px; border-radius: 8px;
+      background: rgba(155,92,255,.16);
+      border: 1px solid rgba(155,92,255,.35);
+      display:grid; place-items:center;
+      flex: 0 0 auto;
+      box-shadow: 0 0 24px rgba(155,92,255,.18);
+    }
+    .tick svg{ width: 14px; height: 14px; fill: var(--purple2); }
+
+    /* Services */
+    .serviceGrid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 18px; }
+    .service{ padding: 18px; border-radius: 18px; border: 1px solid rgba(255,255,255,.10); background: rgba(0,0,0,.18); min-height: 130px; }
+    .service.primary{ min-height: 170px; background: linear-gradient(180deg, rgba(155,92,255,.12), rgba(0,0,0,.18)); border-color: rgba(155,92,255,.22); box-shadow: 0 10px 30px rgba(155,92,255,.12); }
+    .service h3{ margin: 0 0 8px; font-size: 16px; letter-spacing: -.3px; }
+    .service p{ margin:0; color: var(--muted); font-size: 14px; }
+    .chipGrid{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 14px; }
+    .chip{ display:inline-flex; align-items:center; gap:10px; padding: 10px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.03); color: rgba(242,242,247,.92); font-size: 14px; }
+    .chip .miniDot{ width:8px; height:8px; border-radius:999px; background: rgba(198,107,255,.95); box-shadow: 0 0 14px rgba(198,107,255,.40); }
+
+    /* Form */
+    form{ display:grid; gap: 12px; margin-top: 14px; }
+    .field{ display:flex; flex-direction:column; gap: 8px; }
+    label{ font-size: 13px; color: rgba(242,242,247,.88); }
+    input, select{
+      width:100%;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      color: var(--text);
+      padding: 12px 14px;
+      font-size: 15px;
+      outline: none;
+      transition: border-color .12s ease, background .12s ease;
+    }
+    input:focus, select:focus{ border-color: rgba(155,92,255,.55); background: rgba(155,92,255,.08); }
+
+    /* Select (dropdown) – make text always visible even in Safari/preview */
+    select{
+      -webkit-appearance: none;
+      appearance: none;
+      padding-right: 42px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24'%3E%3Cpath fill='%23C66BFF' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 14px 14px;
+    }
+    select:hover{ border-color: rgba(155,92,255,.25); }
+    select option{ background: #0D0D12; color: #F2F2F7; }
+    .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .hint{ margin-top: 10px; color: rgba(242,242,247,.70); font-size: 12px; }
+    .success, .error{
+      display:none;
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+    .success{ border-color: rgba(155,92,255,.45); background: rgba(155,92,255,.10); }
+    .error{ border-color: rgba(255,80,120,.35); background: rgba(255,80,120,.08); }
+
+    /* Location */
+    .locationGrid{ display:grid; grid-template-columns: 1.1fr .9fr; gap: 14px; align-items: stretch; margin-top: 18px; }
+    .map{ border-radius: 18px; overflow:hidden; border: 1px solid rgba(255,255,255,.10); background: rgba(0,0,0,.18); min-height: 260px; }
+    .mapPlaceholder{ height:100%; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:18px; gap:12px; color:rgba(242,242,247,.90); }
+    .mapPlaceholder .small{ color:var(--muted); font-size:14px; max-width:52ch; }
+    .pill{ display:inline-flex; align-items:center; gap:10px; padding:10px 12px; border-radius:999px; border:1px solid rgba(155,92,255,.28); background:rgba(155,92,255,.08); }
+    .pill svg{ width:18px; height:18px; fill:var(--purple2); }
+
+    /* Footer */
+    footer{ padding: 26px 0 40px; border-top: 1px solid rgba(255,255,255,.06); color: rgba(242,242,247,.68); font-size: 13px; }
+    .footerRow{ display:flex; align-items:flex-start; justify-content:space-between; gap: 18px; flex-wrap: wrap; }
+    .ig{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(155,92,255,.28);
+      background: rgba(155,92,255,.08);
+      color: var(--text);
+    }
+    .ig svg{ width: 18px; height: 18px; fill: var(--purple2); }
+
+    /* Responsive */
+    @media (max-width: 940px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      .serviceGrid{ grid-template-columns: 1fr; }
+      .locationGrid{ grid-template-columns: 1fr; }
+      .bullets{ grid-template-columns: 1fr; }
+      section{ padding: 58px 0; }
+    }
+    @media (max-width: 520px){
+      .nav{ display:none; }
+      .grid2{ grid-template-columns: 1fr; }
+      .statGrid{ grid-template-columns: 1fr; }
+      .hero{ padding-top: 44px; }
+    }
+
+    /* Tiny dev status badge (only visible if JS fails) */
+    #jsStatus{ display:none; margin-left:10px; font-size:12px; color:rgba(242,242,247,.72); }
+    #jsStatus.bad{ display:inline-flex; }
+  </style>
+</head>
+
+<body>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="container">
+      <div class="inner">
+        <div class="brand" aria-label="Botond Prikk">
+          <span class="mark" aria-hidden="true"></span>
+          <span>Botond Prikk</span>
+          <span id="jsStatus" class="bad">(JS hiba)</span>
+        </div>
+
+        <nav class="nav" aria-label="Oldal navigáció">
+          <a href="#rolam">Rólam</a>
+          <a href="#miert">Miért velem?</a>
+          <a href="#gyik">GYIK</a>
+          <a href="#szolgaltatasok">Szolgáltatások</a>
+          <a href="#helyszin">Helyszín</a>
+        </nav>
+
+        <a class="btn btn-primary" href="#jelentkezes">Jelentkezem edzésre</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="heroGrid">
+        <div class="card pad">
+          <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Személyi & online edzés • Szeged</span>
+          <h1>Fogyás, életmódváltás, izomtömeg-növelés — <span style="color: var(--purple2);">rendszerben</span>, nem kapkodásban.</h1>
+          <p class="lead">
+            Ha eleged van a „majd hétfőtől” körből: csináljunk egy egyszerű, tartható tervet.
+            Következetes edzéssel és normális keretekkel jönnek az eredmények — én ebben segítek.
+          </p>
+
+          <div class="heroActions">
+            <a class="btn btn-primary" href="#jelentkezes">Jelentkezem edzésre</a>
+            <a class="btn" href="#szolgaltatasok">Szolgáltatások</a>
+          </div>
+
+          <div class="accentLine" role="presentation"></div>
+
+          <p class="mini">
+            <b>Fókusz:</b> helyes kivitelezés • fokozatos terhelés • hosszú távú szemlélet
+          </p>
+        </div>
+
+        <aside class="card pad">
+          <div class="stack">
+            <div class="statGrid">
+              <div class="stat">
+                <div class="k">Edzésforma</div>
+                <div class="v">Személyi / Online</div>
+              </div>
+              <div class="stat">
+                <div class="k">Célok</div>
+                <div class="v">Fogyás • Izom</div>
+              </div>
+              <div class="stat">
+                <div class="k">Szint</div>
+                <div class="v">Kezdő–Haladó</div>
+              </div>
+              <div class="stat">
+                <div class="k">Szemlélet</div>
+                <div class="v">Következetes rendszer</div>
+              </div>
+            </div>
+
+            <div class="accentLine" role="presentation"></div>
+
+            <div>
+              <div class="eyebrow"><span class="dot" aria-hidden="true"></span> Hogyan dolgozunk együtt?</div>
+              <ol class="steps" aria-label="Folyamat">
+                <li><b>Jelentkezés</b> az űrlapon (1 perc).</li>
+                <li><b>Egyeztetés</b> telefonon / online / személyesen: célok, előzmények, keretek.</li>
+                <li><b>Start</b>: személyre szabott terv és követhető rendszer.</li>
+              </ol>
+              <p class="mini" style="margin-top:10px;">
+                <b>Válaszidő:</b> általában 24 órán belül.<br>
+                <b>Férőhely:</b> korlátozott — ha komolyan gondolod, érdemes most lépni.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <!-- RÖVID BEMUTATKOZÁS -->
+  <section id="rolam">
+    <div class="container">
+      <div class="card pad">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Rólam</span>
+        <h2 style="margin:12px 0 8px; letter-spacing:-.6px;">Szia, Botond vagyok.</h2>
+        <p class="lead" style="max-width: 80ch;">
+          Személyi edzőként a célom az, hogy ne csak „edzéseid legyenek”, hanem egy követhető rendszered.
+          A fejlődés nálam nem hirtelen nagy lendületből, hanem <b>biztonságosan, fokozatosan</b> jön:
+          helyes kivitelezés, reális terhelés, és olyan szokások, amiket hosszú távon is tartani tudsz.
+        </p>
+        <p class="lead" style="max-width: 80ch; margin-top:12px; font-size:16px;">
+          <b>Több mint 3 éve</b> dolgozom edzőként, <b>7 éve</b> edzem rendszeresen.
+          Diplomás sportszervező vagyok, személyi edző képesítéssel — és a szabadidőm nagy részében is tanulok, fejlődöm.
+          A legnagyobb bizonyítékom: én is végigmentem a változáson, közel <b>15 kilót fogytam</b>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIÉRT VELEM DOLGOZZ? -->
+  <section id="miert">
+    <div class="container">
+      <div class="card pad">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Miért velem dolgozz?</span>
+        <h2 style="margin:12px 0 8px; letter-spacing:-.6px;">Tiszta terv, stabil haladás.</h2>
+
+        <ul class="bullets">
+          <li>
+            <span class="tick" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+            </span>
+            <div><b>Személyre szabott edzéstervezés</b><br><span style="color:var(--muted); font-size:14px;">Cél, szint, időbeosztás alapján.</span></div>
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+            </span>
+            <div><b>Fokozatos, biztonságos fejlődés</b><br><span style="color:var(--muted); font-size:14px;">Terhelés lépésről lépésre.</span></div>
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+            </span>
+            <div><b>Fogyás és izomtömeg-növelés</b><br><span style="color:var(--muted); font-size:14px;">Edzés + életmód keretek.</span></div>
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+            </span>
+            <div><b>Életmódváltás támogatása</b><br><span style="color:var(--muted); font-size:14px;">Tartható rutin, nem végletek.</span></div>
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+            </span>
+            <div><b>Helyes kivitelezés</b><br><span style="color:var(--muted); font-size:14px;">Technika = eredmény + sérülésmegelőzés.</span></div>
+          </li>
+          <li>
+            <span class="tick" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+            </span>
+            <div><b>Hosszú távú szemlélet</b><br><span style="color:var(--muted); font-size:14px;">Nem 2 hét, hanem új alapok.</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GYIK / BIZALOM -->
+  <section id="gyik">
+    <div class="container">
+      <div class="card pad">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Gyakori kérdések</span>
+        <h2 style="margin:12px 0 8px; letter-spacing:-.6px;">Ami általában fel szokott merülni</h2>
+
+        <details class="faq">
+          <summary>„Neked könnyű, jó a genetikád — én nem tudok lefogyni.”</summary>
+          <p>Ez a leggyakoribb kifogás. A lényeg nem az, hogy máshoz képest hol tartasz, hanem hogy a saját tegnapodhoz képest jobb legyél. Mindenki képes fejlődni — a kulcs a reális terv és a következetesség.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Kezdőként is jöhetek?</summary>
+          <p>Igen. Kezdőknél különösen fontos, hogy helyesen építsük fel az alapokat: kivitelezés, fokozatos terhelés, tartható rutin.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Online edzésnél hogyan tudod ellenőrizni a technikám?</summary>
+          <p>Videós elemzéssel. Küldesz felvételt (vagy vezetett edzésrészletet), én pedig visszajelzek és javítunk. Szükség szerint frissítem a tervet az eredményeid alapján.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Mennyi idő után látszik változás?</summary>
+          <p>Ez egyéni, de ha megvan a rendszer (edzés + életmód), akkor már az első hetekben érezhető a fejlődés: jobb közérzet, erő, állóképesség. A látványosabb változás időt és következetességet kér.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- SZOLGÁLTATÁSOK -->
+  <section id="szolgaltatasok">
+    <div class="container">
+      <div class="card pad">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Szolgáltatások</span>
+        <h2 style="margin:12px 0 8px; letter-spacing:-.6px;">Amihez tudunk együtt építkezni</h2>
+        <p class="lead" style="max-width: 80ch;">
+          Választhatsz személyes vagy online együttműködést. Kezdőként rendet teszünk az alapokban,
+          haladóként pedig finomhangolunk és stabilan építjük az erőt / izomtömeget.
+        </p>
+
+        <div class="serviceGrid" role="list">
+          <div class="service primary" role="listitem">
+            <h3>Személyi edzés</h3>
+            <p>Teremben, végig figyelek a kivitelezésre és a terhelésre. Lépésről lépésre építjük fel a rendszert, hogy stabilan jöjjön az eredmény.</p>
+          </div>
+          <div class="service primary" role="listitem">
+            <h3>Online edzés</h3>
+            <p>Edzésterv + követés + visszajelzés. Videós elemzés (vezetett edzések / kivitelezés), szükség szerint tervfrissítés az eredményeid alapján, és heti 1 hosszabb átbeszélés. Gyors kérdésekre is számíthatsz — a cél, hogy ne maradj egyedül.</p>
+          </div>
+        </div>
+
+        <div class="accentLine" role="presentation"></div>
+
+        <h3 style="margin:0 0 8px; font-size:16px; letter-spacing:-.3px;">Átfogóan ezekben segítek</h3>
+        <p class="lead" style="max-width: 80ch; font-size: 16px;">
+          Kezdőtől haladóig: fogyás / életmódváltás / izomtömeg-növelés / erőnövelés. Mindig a helyes kivitelezés és a fokozatos fejlődés az alap.
+        </p>
+
+        <div class="chipGrid" aria-label="Fókuszok">
+          <span class="chip"><span class="miniDot" aria-hidden="true"></span>Kezdő & haladó</span>
+          <span class="chip"><span class="miniDot" aria-hidden="true"></span>Fogyás</span>
+          <span class="chip"><span class="miniDot" aria-hidden="true"></span>Életmódváltás</span>
+          <span class="chip"><span class="miniDot" aria-hidden="true"></span>Izomtömeg-növelés</span>
+          <span class="chip"><span class="miniDot" aria-hidden="true"></span>Erőnövelés</span>
+          <span class="chip"><span class="miniDot" aria-hidden="true"></span>Általános fittség</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JELENTKEZÉSI SZEKCIÓ -->
+  <section id="jelentkezes">
+    <div class="container">
+      <div class="card pad">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Jelentkezés</span>
+        <h2 style="margin:12px 0 8px; letter-spacing:-.6px;">Jelentkezz — és induljunk el</h2>
+        <p class="lead" style="max-width: 80ch;">
+          Add meg az adataid, és <b>általában 24 órán belül</b> visszajelzek.
+          Röviden egyeztetünk telefonon / online / személyesen, és megnézzük, melyik együttműködés (személyi vagy online) illik hozzád.
+        </p>
+
+        <div class="accentLine" role="presentation"></div>
+
+        <p class="lead" style="max-width: 80ch; font-size:16px;">
+          <b>Ajánlott minimum:</b> heti 2 edzés. <b>3</b> már nagyon jó, <b>4</b> a legjobb — a célodtól és a napirendedtől függően.
+          Választható <b>csomagok</b> vannak, amit jelentkezés után elküldök.
+        </p>
+
+        <form id="leadForm" method="POST" action="https://formspree.io/f/mwvopnde" novalidate>
+          <!--
+            VERCEL + EMAIL (legegyszerűbb): Formspree
+            1) Hozz létre egy formot Formspree-n (Vercel integráció is van)
+            2) Cseréld a fenti action URL-ben a FORM_ID-t a sajátodra (pl. https://formspree.io/f/xyzabcde)
+            3) (Opcionális) Átirányítás siker után: írd át az _redirect értékét a saját domain-edre.
+          -->
+          <input type="hidden" name="_subject" value="Új edzés jelentkezés (szemelyiedzo-oldal-iz1q.vercel.app)" />
+          <input type="hidden" name="_redirect" value="https://szemelyiedzo-oldal-iz1q.vercel.app/?success=1#jelentkezes" />
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="grid2">
+            <div class="field">
+              <label for="name">Név *</label>
+              <input id="name" name="name" type="text" autocomplete="name" required placeholder="Pl. Kovács Anna" />
+            </div>
+            <div class="field">
+              <label for="phone">Telefonszám *</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+36..." />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email cím *</label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="anna@email.com" />
+          </div>
+
+          <div class="grid2">
+            <div class="field">
+              <label for="type">Edzés típusa</label>
+              <select id="type" name="type">
+                <option value="Személyi edzés">Személyi edzés</option>
+                <option value="Online edzés">Online edzés</option>
+                <option value="Még nem tudom">Még nem tudom</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="goal">Fő cél</label>
+              <select id="goal" name="goal">
+                <option value="Fogyás / életmódváltás">Fogyás / életmódváltás</option>
+                <option value="Izomtömeg-növelés">Izomtömeg-növelés</option>
+                <option value="Erőnövelés">Erőnövelés</option>
+                <option value="Általános fittség">Általános fittség</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit" aria-label="Jelentkezem">Jelentkezem</button>
+
+          <div class="hint">
+            Az űrlap elküldésével hozzájárulsz, hogy a megadott adatok alapján felvegyem veled a kapcsolatot.
+            Az adataidat kizárólag egyeztetés céljára használom, harmadik félnek nem adom át.
+          </div>
+
+          <div class="success" id="successBox" role="status" aria-live="polite"></div>
+          <div class="error" id="errorBox" role="alert">
+            Kérlek, töltsd ki a kötelező mezőket érvényes adatokkal (név, email, telefonszám).
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- HELYSZÍN -->
+  <section id="helyszin">
+    <div class="container">
+      <div class="card pad">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Helyszín</span>
+        <h2 style="margin:12px 0 8px; letter-spacing:-.6px;">Kathi Béla – THE LEGEND</h2>
+
+        <div class="locationGrid">
+          <div class="card pad" style="background: rgba(0,0,0,.18); box-shadow:none;">
+            <p class="lead" style="margin:0;">
+              <b>Szeged</b><br>
+              Etelka sor 1-A épület, 6723
+            </p>
+            <div class="accentLine" role="presentation"></div>
+            <p class="lead" style="font-size:14px; margin:0; color: var(--muted);">
+              Ha személyi edzésre jössz, itt találkozunk. Online edzésnél természetesen nem helyhez kötött.
+            </p>
+          </div>
+
+          <div class="map" aria-label="Térkép">
+            <div class="mapPlaceholder">
+              <div class="pill" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2c3.9 0 7 3.1 7 7 0 5.2-7 13-7 13S5 14.2 5 9c0-3.9 3.1-7 7-7zm0 9.5c1.4 0 2.5-1.1 2.5-2.5S13.4 6.5 12 6.5 9.5 7.6 9.5 9 10.6 11.5 12 11.5z"/></svg>
+                <span>Térkép (offline)</span>
+              </div>
+              <div class="small">
+                A preview környezet sokszor blokkolja az online térképet. Itt offline is megmarad a dizájn.
+              </div>
+              <a class="btn" href="https://www.google.com/maps?q=Szeged%2C%20Etelka%20sor%201-A%20%C3%A9p%C3%BClet%2C%206723" target="_blank" rel="noopener noreferrer">Megnyitom Google Térképen</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOTIVÁCIÓ / BIZALOMÉPÍTÉS -->
+  <section id="motivacio">
+    <div class="container">
+      <div class="card pad">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Motiváció</span>
+        <h2 style="margin:12px 0 8px; letter-spacing:-.6px;">A változás nem varázslat — következetesség.</h2>
+        <p class="lead" style="max-width: 85ch;">
+          Nem az a lényeg, hogy mindig tökéletes legyél, hanem hogy legyen egy terv, amit újra és újra meg tudsz csinálni.
+          Ha ma csak egy lépést teszel, az is számít. Én abban segítek, hogy ezek a lépések
+          <b>rendszerré álljanak össze</b> — és ebből jöjjön az eredmény.
+        </p>
+        <div class="heroActions" style="margin-top: 18px;">
+          <a class="btn" href="#rolam">Vissza a bemutatkozáshoz</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footerRow">
+        <div class="stack" style="gap:8px; min-width: 260px;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span class="mark" aria-hidden="true"></span>
+            <b style="color:var(--text);">Botond Prikk</b>
+          </div>
+          <div>Kapcsolat: <a href="mailto:botond.prikk@gmail.com" style="color:rgba(198,107,255,.95); text-decoration:underline; text-underline-offset:3px;">botond.prikk@gmail.com</a></div>
+          <div style="color:rgba(242,242,247,.55);">© <span id="year"></span> Minden jog fenntartva.</div>
+        </div>
+
+        <a class="ig" href="https://www.instagram.com/botondprikk/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.2-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/>
+          </svg>
+          <span>Instagram</span>
+        </a>
+
+        <div style="max-width: 420px; color:rgba(242,242,247,.55);">
+          Jogi: Az oldalon található tartalom tájékoztató jellegű. Az edzésprogram és terhelés egyéni felmérés alapján kerül kialakításra.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      // ====== Mini “tests” (dev sanity checks) ======
+      function assert(cond, msg){
+        if(!cond) throw new Error("Test failed: " + msg);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        // Hide the JS error badge if we got this far.
+        const jsStatus = document.getElementById('jsStatus');
+        if (jsStatus) jsStatus.style.display = 'none';
+
+        // Basic DOM tests
+        assert(!!document.getElementById('year'), '#year element exists');
+        assert(!!document.getElementById('leadForm'), '#leadForm exists');
+        assert(!!document.getElementById('successBox'), '#successBox exists');
+        assert(!!document.getElementById('errorBox'), '#errorBox exists');
+        assert(document.querySelectorAll('a[href^="#"]').length >= 3, 'has anchor links');
+
+        // Footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Anchor scrolling (previewben néha blokkolja a hash-navigációt)
+        document.querySelectorAll('a[href^="#"]').forEach((a) => {
+          a.addEventListener('click', (e) => {
+            const href = a.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            try { history.pushState(null, '', href); } catch (_) {}
+          });
+        });
+
+        // Form handling
+        // Megjegyzés: Vercel-en a Netlify Forms nem működik. Ha azt szeretnéd, hogy a jelentkezésből
+        // automatikusan email érkezzen neked, a legegyszerűbb egy "form backend" szolgáltató (pl. Formspree).
+
+        // Success message from redirect (?success=1)
+        const params = new URLSearchParams(window.location.search);
+        const success = params.get('success');
+        const successBox = document.getElementById('successBox');
+        const errorBox = document.getElementById('errorBox');
+        const form = document.getElementById('leadForm');
+
+        if (success === '1' && successBox) {
+          successBox.style.display = 'block';
+          successBox.textContent = 'Köszi! Megkaptam a jelentkezésed — hamarosan visszajelzek.';
+          // Optional: clear query param so refresh doesn't keep showing it
+          try {
+            const url = new URL(window.location.href);
+            url.searchParams.delete('success');
+            window.history.replaceState({}, '', url.toString());
+          } catch (_) {}
+        }
+
+        function isValidEmail(v){
+          const s = String(v || '').trim();
+          const at = s.indexOf('@');
+          if (at < 1) return false;
+          const dot = s.lastIndexOf('.');
+          return dot > at + 1 && dot < s.length - 1;
+        }
+        function clean(v){ return String(v || '').trim(); }
+
+        // Minimal client-side validation (nice UX). Netlify will still receive POST.
+        // NOTE: A ChatGPT preview / sandbox gyakran iframe-ben fut és biztonsági okból blokkolja a form POST-ot.
+        // Ilyenkor ne is próbáljunk hálózati kérést indítani — csak mutassunk demo üzenetet.
+
+        const host = (window.location.hostname || '').toLowerCase();
+        const proto = (window.location.protocol || '').toLowerCase();
+        const isChatGptPreview = host.includes('chat.openai.com') || host.includes('chatgpt.com') || host.includes('openai.com');
+        const isLocalOrFile = proto === 'file:' || host === '' || host === 'localhost' || host === '127.0.0.1';
+        let isInIframe = false;
+        try { isInIframe = window.self !== window.top; } catch (_) { isInIframe = true; }
+        const isPreviewSandbox = isChatGptPreview || isLocalOrFile || isInIframe;
+
+        if (form) {
+          // In preview sandbox, prevent any accidental POST attempts that can "freeze" the iframe.
+          if (isPreviewSandbox) {
+            form.setAttribute('action', '#');
+          }
+
+          form.addEventListener('submit', (e) => {
+            if (!errorBox) return;
+            errorBox.style.display = 'none';
+
+            const name = clean(form.name.value);
+            const email = clean(form.email.value);
+            const phone = clean(form.phone.value);
+
+            if (!name || !phone || !isValidEmail(email)) {
+              e.preventDefault();
+              errorBox.style.display = 'block';
+              try { errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (_) {}
+              return;
+            }
+
+            // Preview / sandbox: no network. Show demo success instead.
+            if (isPreviewSandbox) {
+              e.preventDefault();
+              if (successBox) {
+                successBox.style.display = 'block';
+                successBox.textContent = 'Köszi! (Demo) A preview környezetben nem küldünk ténylegesen. Éles oldalon (Vercel) a Formspree fogja elküldeni a jelentkezést, és én megkapom emailben.';
+              }
+              try { form.reset(); } catch (_) {}
+              return;
+            }
+
+            // ÉLESBEN: hagyjuk lefutni a natív POST-ot Netlify felé.
+            // (A siker üzenetet a redirect paraméter kezeli: ?success=1)
+          });
+        }
+
+        // Extra test: email validator should accept a valid email
+        assert(isValidEmail('test@example.com') === true, 'email validator accepts test@example.com');
+        assert(isValidEmail('bad@@example') === false, 'email validator rejects bad@@example');
+      });
+    })();
+  </script>
+</body>
+</html>
