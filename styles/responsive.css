@@ -1,0 +1,13 @@
+@media (max-width: 940px){
+  .heroGrid{ grid-template-columns: 1fr; }
+  .serviceGrid{ grid-template-columns: 1fr; }
+  .locationGrid{ grid-template-columns: 1fr; }
+  .bullets{ grid-template-columns: 1fr; }
+  section{ padding: 58px 0; }
+}
+@media (max-width: 520px){
+  .nav{ display:none; }
+  .grid2{ grid-template-columns: 1fr; }
+  .statGrid{ grid-template-columns: 1fr; }
+  .hero{ padding-top: 44px; }
+}

@@ -1,0 +1,16 @@
+.container{ width:min(var(--max), 92vw); margin:0 auto; }
+.stack{ display:flex; flex-direction:column; gap: 18px; }
+
+section{ padding: 72px 0; }
+
+.hero{ padding: 66px 0 36px; }
+.heroGrid{ display:grid; grid-template-columns: 1.15fr .85fr; gap: 26px; align-items: stretch; }
+.heroActions{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 20px; }
+
+.statGrid{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.bullets{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 0; padding:0; list-style:none; }
+.serviceGrid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 18px; }
+.chipGrid{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 14px; }
+.grid2{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.locationGrid{ display:grid; grid-template-columns: 1.1fr .9fr; gap: 14px; align-items: stretch; margin-top: 18px; }
+.footerRow{ display:flex; align-items:flex-start; justify-content:space-between; gap: 18px; flex-wrap: wrap; }
