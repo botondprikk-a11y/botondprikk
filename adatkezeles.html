@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adatkezelési tájékoztató • Botond Prikk</title>
+  <meta name="description" content="Adatkezelési tájékoztató a személyi és online edzés jelentkezéséhez." />
+
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="inner">
+        <div class="brand" aria-label="Botond Prikk">
+          <span class="mark" aria-hidden="true"></span>
+          <span>Botond Prikk</span>
+        </div>
+        <a class="btn" href="index.html#jelentkezes">Vissza a főoldalra</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section>
+      <div class="container">
+        <div class="card pad">
+          <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Adatkezelés</span>
+          <h1>Adatkezelési tájékoztató</h1>
+          <p class="lead lead-max-80">
+            Az alábbi összefoglaló a jelentkezési űrlapon megadott adatok kezeléséről szól. A szöveget
+            a következő körben véglegesítjük és pontosítjuk.
+          </p>
+
+          <div class="accentLine" role="presentation"></div>
+
+          <h2 class="section-title">Adatkezelő</h2>
+          <p class="lead lead-max-80 lead-sm">
+            Név: Botond Prikk<br>
+            Kapcsolat: <a href="mailto:botond.prikk@gmail.com" class="footer-link">botond.prikk@gmail.com</a>
+          </p>
+
+          <h2 class="section-title">Kezelt adatok</h2>
+          <p class="lead lead-max-80 lead-sm">
+            Név, email cím, telefonszám, valamint az űrlapon kiválasztott edzéstípus és cél.
+          </p>
+
+          <h2 class="section-title">Az adatkezelés célja</h2>
+          <p class="lead lead-max-80 lead-sm">
+            Kapcsolatfelvétel a jelentkezéssel kapcsolatban, egyeztetés és a megfelelő edzésforma kiválasztása.
+          </p>
+
+          <h2 class="section-title">Jogalap és megőrzés</h2>
+          <p class="lead lead-max-80 lead-sm">
+            Az adatkezelés hozzájárulás alapján történik. Az adatokat a jelentkezés kezeléséhez szükséges ideig őrzöm meg.
+          </p>
+
+          <h2 class="section-title">Érintetti jogok</h2>
+          <p class="lead lead-max-80 lead-sm">
+            Kérheted a tájékoztatást, a helyesbítést, a törlést vagy az adatkezelés korlátozását.
+            Bármilyen kérdés esetén írj emailt.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footerRow">
+        <div class="stack footer-stack">
+          <div class="footer-brand">
+            <span class="mark" aria-hidden="true"></span>
+            <b class="text-strong">Botond Prikk</b>
+          </div>
+          <div>Kapcsolat: <a href="mailto:botond.prikk@gmail.com" class="footer-link">botond.prikk@gmail.com</a></div>
+          <div class="text-dim">© <span id="year"></span> Minden jog fenntartva.</div>
+        </div>
+        <a class="ig" href="https://www.instagram.com/botondprikk/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.2-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/>
+          </svg>
+          <span>Instagram</span>
+        </a>
+        <div class="footer-legal">
+          Jogi: Az oldalon található tartalom tájékoztató jellegű. Az edzésprogram és terhelés egyéni felmérés alapján kerül kialakításra.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

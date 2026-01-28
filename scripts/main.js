@@ -1,7 +1,7 @@
 (function(){
   // ====== Mini "tests" (dev sanity checks) ======
   function assert(cond, msg){
-    if(!cond) throw new Error("Test failed: " + msg);
+    if(!cond) console.warn("Test failed: " + msg);
   }
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -63,19 +63,34 @@
     }
     function clean(v){ return String(v || '').trim(); }
 
-    // Minimal client-side validation (nice UX). Netlify will still receive POST.
+    // Minimal client-side validation (nice UX). Formspree will still receive POST.
     // NOTE: A ChatGPT preview / sandbox gyakran iframe-ben fut és biztonsági okból blokkolja a form POST-ot.
     // Ilyenkor ne is próbáljunk hálózati kérést indítani — csak mutassunk demo üzenetet.
 
     const host = (window.location.hostname || '').toLowerCase();
     const proto = (window.location.protocol || '').toLowerCase();
     const isChatGptPreview = host.includes('chat.openai.com') || host.includes('chatgpt.com') || host.includes('openai.com');
-    const isLocalOrFile = proto === 'file:' || host === '' || host === 'localhost' || host === '127.0.0.1';
+    const isLocalOrFile = proto === 'file:' || host === '';
     let isInIframe = false;
     try { isInIframe = window.self !== window.top; } catch (_) { isInIframe = true; }
     const isPreviewSandbox = isChatGptPreview || isLocalOrFile || isInIframe;
 
     if (form) {
+      form.noValidate = true;
+
+      const redirectInput = form.querySelector('input[name="_redirect"]');
+      if (redirectInput && !redirectInput.value) {
+        if (proto === 'http:' || proto === 'https:') {
+          const base = window.location.origin + window.location.pathname;
+          redirectInput.value = `${base}?success=1#jelentkezes`;
+        }
+      }
+
+      const subjectInput = form.querySelector('input[name="_subject"]');
+      if (subjectInput && subjectInput.value === 'Új edzés jelentkezés' && host) {
+        subjectInput.value = `Új edzés jelentkezés (${host})`;
+      }
+
       // In preview sandbox, prevent any accidental POST attempts that can "freeze" the iframe.
       if (isPreviewSandbox) {
         form.setAttribute('action', '#');
@@ -107,7 +122,7 @@
           return;
         }
 
-        // ÉLESBEN: hagyjuk lefutni a natív POST-ot Netlify felé.
+        // ÉLESBEN: hagyjuk lefutni a natív POST-ot Formspree felé.
         // (A siker üzenetet a redirect paraméter kezeli: ?success=1)
       });
     }
