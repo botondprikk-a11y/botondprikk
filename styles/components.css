@@ -136,6 +136,10 @@ details.faq p{ margin: 10px 0 0; color: var(--muted); }
   border-color: rgba(155,92,255,.30);
   box-shadow: 0 10px 30px rgba(155,92,255,.14);
 }
+.package.best{
+  border-color: rgba(80,200,120,.35);
+  box-shadow: 0 10px 30px rgba(80,200,120,.10);
+}
 .package h3{ margin: 0; font-size: 16px; letter-spacing: -.3px; }
 .package-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
 .badge{
@@ -148,12 +152,18 @@ details.faq p{ margin: 10px 0 0; color: var(--muted); }
   background: rgba(155,92,255,.20);
   color: var(--text);
 }
+.badge-best{
+  border-color: rgba(80,200,120,.65);
+  background: rgba(80,200,120,.22);
+  color: #ECFFF2;
+}
 .package-kicker, .package-why{ margin: 0; color: var(--muted); font-size: 14px; }
 .package-block{ display:flex; flex-direction:column; gap: 8px; }
 .package-label{ font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
 .package-list{ margin: 0; padding-left: 18px; color: rgba(242,242,247,.9); font-size: 14px; }
 .package-list li{ margin: 6px 0; }
-.package .btn{ margin-top: 4px; align-self:flex-start; }
+.package-footer{ margin-top: auto; display:flex; flex-direction:column; gap: 10px; }
+.package-footer .btn{ align-self:flex-start; }
 
 .chip{ display:inline-flex; align-items:center; gap:10px; padding: 10px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.03); color: rgba(242,242,247,.92); font-size: 14px; }
 .chip .miniDot{ width:8px; height:8px; border-radius:999px; background: rgba(198,107,255,.95); box-shadow: 0 0 14px rgba(198,107,255,.40); }
@@ -217,15 +227,38 @@ select option{ background: #0D0D12; color: #F2F2F7; }
 .error{ border-color: rgba(255,80,120,.35); background: rgba(255,80,120,.08); }
 
 /* Results */
+.resultSlider{ margin-top: 18px; display:flex; flex-direction:column; gap: 12px; }
+.resultLabel{ font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+.resultTrack{ position: relative; }
 .resultCard{
+  display:none;
   padding: 18px;
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,.10);
   background: rgba(0,0,0,.18);
 }
+.resultCard.is-active{ display:block; }
 .resultMetric{ font-size: 16px; font-weight: 700; letter-spacing: -0.3px; }
 .resultMeta{ margin-top: 6px; font-size: 12px; color: var(--muted); }
 .resultText{ margin: 10px 0 0; color: rgba(242,242,247,.88); font-size: 14px; }
+.resultNav{ display:flex; align-items:center; gap: 10px; flex-wrap:wrap; }
+.resultDots{ display:flex; align-items:center; gap: 8px; }
+.resultDot{
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.04);
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+}
+.resultDot.is-active, .resultDot[aria-pressed="true"]{
+  border-color: rgba(155,92,255,.60);
+  background: rgba(155,92,255,.20);
+  color: var(--text);
+}
+.resultBtn{ padding: 8px 12px; font-size: 13px; }
 
 /* Testimonials */
 .quoteCard{

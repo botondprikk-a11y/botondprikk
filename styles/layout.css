@@ -16,4 +16,7 @@ section{ padding: 72px 0; }
 .chipGrid{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 14px; }
 .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .locationGrid{ display:grid; grid-template-columns: 1.1fr .9fr; gap: 14px; align-items: stretch; margin-top: 18px; }
+.locationRow{ display:flex; align-items:center; justify-content:space-between; gap: 18px; margin-top: 18px; }
+.locationText{ display:flex; flex-direction:column; gap: 10px; }
+.locationAction{ flex: 0 0 auto; }
 .footerRow{ display:flex; align-items:flex-start; justify-content:space-between; gap: 18px; flex-wrap: wrap; }

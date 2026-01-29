@@ -5,6 +5,7 @@
   .resultGrid{ grid-template-columns: 1fr; }
   .quoteGrid{ grid-template-columns: 1fr; }
   .locationGrid{ grid-template-columns: 1fr; }
+  .locationRow{ flex-direction: column; align-items: flex-start; }
   .bullets{ grid-template-columns: 1fr; }
   section{ padding: 58px 0; }
 }

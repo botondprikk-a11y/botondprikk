@@ -245,8 +245,10 @@
                 <li>Akkor működik a legjobban, ha hasonló a cél és a szint</li>
               </ul>
             </div>
-            <p class="package-why"><b>Miért éri meg:</b> Jó ár-érték arány, és sokan motiváltabbak ketten.</p>
-            <a class="btn btn-primary" href="#jelentkezes" data-type="Páros edzés">Jelentkezem páros edzésre</a>
+            <div class="package-footer">
+              <p class="package-why"><b>Miért éri meg:</b> Jó ár-érték arány, és sokan motiváltabbak ketten.</p>
+              <a class="btn btn-primary" href="#jelentkezes" data-type="Páros edzés">Jelentkezem páros edzésre</a>
+            </div>
           </div>
 
           <div class="package" role="listitem">
@@ -261,12 +263,17 @@
                 <li>Fejlődés követése, célok mentén</li>
               </ul>
             </div>
-            <p class="package-why"><b>Miért éri meg:</b> Minden edzés vezetve van, így könnyebb stabilan haladni.</p>
-            <a class="btn" href="#jelentkezes" data-type="Személyi edzés">Jelentkezem személyi edzésre</a>
+            <div class="package-footer">
+              <p class="package-why"><b>Miért éri meg:</b> Minden edzés vezetve van, így könnyebb stabilan haladni.</p>
+              <a class="btn" href="#jelentkezes" data-type="Személyi edzés">Jelentkezem személyi edzésre</a>
+            </div>
           </div>
 
-          <div class="package" role="listitem">
-            <h3>Online coaching</h3>
+          <div class="package best" role="listitem">
+            <div class="package-head">
+              <h3>Online coaching</h3>
+              <span class="badge badge-best">Legjobb ár-érték</span>
+            </div>
             <p class="package-kicker"><b>Kinek ajánlom:</b> Ha önállóan edzenél, de kell egy stabil rendszer, folyamatos kontroll és erős étrendi irány.</p>
             <div class="package-block">
               <div class="package-label">Mit tartalmaz</div>
@@ -282,56 +289,58 @@
                 <li>Írásban tudsz kérdezni, és a leghamarabb válaszolok, amikor elérhető vagyok</li>
               </ul>
             </div>
-            <p class="package-why"><b>Miért éri meg:</b> Nem csak tervet kapsz, hanem rendszerben követjük a haladást, és közben megtanulod az étrendet is.</p>
-            <a class="btn" href="#jelentkezes" data-type="Online coaching">Jelentkezem online coachingra</a>
+            <div class="package-footer">
+              <p class="package-why"><b>Miért éri meg:</b> Nem csak tervet kapsz, hanem rendszerben követjük a haladást, és közben megtanulod az étrendet is.</p>
+              <a class="btn" href="#jelentkezes" data-type="Online coaching">Jelentkezem online coachingra</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EREDMÉNYEK -->
-  <section id="eredmenyek">
-    <div class="container">
-      <div class="card pad">
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Eredmények a gyakorlatban</span>
-        <h2 class="section-title">Kicsi, de fontos lépések</h2>
-        <p class="lead lead-max-80">
-          Rövid, konkrét példák arra, hogyan néz ki a haladás, amikor van rendszer és követés.
-        </p>
-
-        <div class="resultGrid" role="list">
-          <div class="resultCard" role="listitem">
-            <div class="resultMetric">8 hét alatt -4 cm derék</div>
-            <div class="resultMeta">Bence T. • 2 edzés/hét</div>
-            <p class="resultText">Stabil kalóriakeret, pontos kivitelezés, és heti check-in után jött a látványosabb változás.</p>
-          </div>
-          <div class="resultCard" role="listitem">
-            <div class="resultMetric">Guggolás +15 kg</div>
-            <div class="resultMeta">Dóra K. • 10 hét</div>
-            <p class="resultText">Technika javítás, fokozatos terhelés, és edzésnapló alapján finomított program.</p>
-          </div>
-          <div class="resultCard" role="listitem">
-            <div class="resultMetric">-3 kg és jobb közérzet</div>
-            <div class="resultMeta">Ádám P. • 6 hét</div>
-            <p class="resultText">Rendszeres edzés, egyszerű étkezési keret, és következetes rutin.</p>
-          </div>
-        </div>
-
-        <p class="mini mini-tight">Az eredmények egyénfüggők, a kiindulópont és a következetesség számít.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- VENDÉGVÉLEMÉNYEK -->
+  <!-- VÉLEMÉNYEK -->
   <section id="velemenyek">
     <div class="container">
       <div class="card pad">
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Vendégvélemények</span>
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Vélemények</span>
         <h2 class="section-title">Visszajelzések a közös munkáról</h2>
         <p class="lead lead-max-80">
           Rövid, valós élmények arról, milyen a közös munka. Fejlesztési módban minta vélemények, később cserélhetők.
         </p>
+
+        <div class="resultSlider" data-results-slider aria-label="Eredmények lapozó">
+          <div class="resultLabel">Eredmények (lapozható)</div>
+          <div class="resultTrack" role="list">
+            <div class="resultCard is-active" role="listitem" data-slide>
+              <div class="resultMetric">8 hét alatt -4 cm derék</div>
+              <div class="resultMeta">Bence T. • 2 edzés/hét</div>
+              <p class="resultText">Stabil kalóriakeret, pontos kivitelezés, és heti check-in után jött a látványosabb változás.</p>
+            </div>
+            <div class="resultCard" role="listitem" data-slide>
+              <div class="resultMetric">Guggolás +15 kg</div>
+              <div class="resultMeta">Dóra K. • 10 hét</div>
+              <p class="resultText">Technika javítás, fokozatos terhelés, és edzésnapló alapján finomított program.</p>
+            </div>
+            <div class="resultCard" role="listitem" data-slide>
+              <div class="resultMetric">-3 kg és jobb közérzet</div>
+              <div class="resultMeta">Ádám P. • 6 hét</div>
+              <p class="resultText">Rendszeres edzés, egyszerű étkezési keret, és következetes rutin.</p>
+            </div>
+          </div>
+          <div class="resultNav" aria-label="Eredmények lapozása">
+            <button class="btn resultBtn" type="button" data-prev>Előző</button>
+            <div class="resultDots" role="tablist" aria-label="Eredmények oldalak">
+              <button class="resultDot is-active" type="button" data-dot aria-pressed="true">1</button>
+              <button class="resultDot" type="button" data-dot aria-pressed="false">2</button>
+              <button class="resultDot" type="button" data-dot aria-pressed="false">3</button>
+            </div>
+            <button class="btn resultBtn" type="button" data-next>Következő</button>
+          </div>
+          <p class="mini mini-tight">Az eredmények egyénfüggők, a kiindulópont és a következetesség számít.</p>
+        </div>
+
+        <div class="accentLine" role="presentation"></div>
 
         <div class="quoteGrid" role="list">
           <div class="quoteCard" role="listitem">
@@ -503,20 +512,16 @@
     <div class="container">
       <div class="card pad">
         <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Helyszín</span>
-        <h2 class="section-title">Kathi Béla - THE LEGEND</h2>
-
-        <div class="locationGrid">
-          <div class="card pad card-flat">
+        <div class="locationRow">
+          <div class="locationText">
+            <h2 class="section-title m-0">Kathi Béla - THE LEGEND</h2>
             <p class="lead m-0">
               <b>Szeged</b><br>
               Etelka sor 1-A épület, 6723
             </p>
           </div>
-
-          <div class="map" aria-label="Térkép">
-            <div class="mapPlaceholder">
-              <a class="btn" href="https://www.google.com/maps?q=Szeged%2C%20Etelka%20sor%201-A%20%C3%A9p%C3%BClet%2C%206723" target="_blank" rel="noopener noreferrer">Megnyitom Google Térképen</a>
-            </div>
+          <div class="locationAction">
+            <a class="btn btn-primary" href="https://www.google.com/maps?q=Szeged%2C%20Etelka%20sor%201-A%20%C3%A9p%C3%BClet%2C%206723" target="_blank" rel="noopener noreferrer">Megnyitom a térképen</a>
           </div>
         </div>
       </div>

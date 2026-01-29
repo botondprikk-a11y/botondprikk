@@ -37,6 +37,36 @@
       });
     });
 
+    // Results slider (single visible card with pagination)
+    const resultsSlider = document.querySelector('[data-results-slider]');
+    if (resultsSlider) {
+      const slides = Array.from(resultsSlider.querySelectorAll('[data-slide]'));
+      const dots = Array.from(resultsSlider.querySelectorAll('[data-dot]'));
+      const prevBtn = resultsSlider.querySelector('[data-prev]');
+      const nextBtn = resultsSlider.querySelector('[data-next]');
+      let activeIndex = 0;
+
+      const setActive = (index) => {
+        if (slides.length === 0) return;
+        activeIndex = (index + slides.length) % slides.length;
+        slides.forEach((slide, i) => {
+          const isActive = i === activeIndex;
+          slide.classList.toggle('is-active', isActive);
+          slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        });
+        dots.forEach((dot, i) => {
+          const isActive = i === activeIndex;
+          dot.classList.toggle('is-active', isActive);
+          dot.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+      };
+
+      setActive(0);
+      if (prevBtn) prevBtn.addEventListener('click', () => setActive(activeIndex - 1));
+      if (nextBtn) nextBtn.addEventListener('click', () => setActive(activeIndex + 1));
+      dots.forEach((dot, i) => dot.addEventListener('click', () => setActive(i)));
+    }
+
     // Form handling
     // Megjegyzés: Vercel-en a Netlify Forms nem működik. Ha azt szeretnéd, hogy a jelentkezésből
     // automatikusan email érkezzen neked, a legegyszerűbb egy "form backend" szolgáltató (pl. Formspree).
