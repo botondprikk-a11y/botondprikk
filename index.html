@@ -3,14 +3,52 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Botond Prikk • Személyi edzés / Online edzés</title>
-  <meta name="description" content="Modern, letisztult landing page személyi és online edzés jelentkezéshez. Fogyás, életmódváltás, izomtömeg-növelés." />
+  <title>Személyi edzés Szeged - Botond Prikk</title>
+  <meta name="description" content="Személyi, páros és online edzés Szegeden. Rendszer, technika, kalóriakeret, követés. Jelentkezés után 24 órán belül válaszolok." />
+  <link rel="canonical" href="https://botondprikk.vercel.app/" />
+
+  <meta property="og:title" content="Személyi edzés Szeged - Botond Prikk" />
+  <meta property="og:description" content="Személyi, páros és online edzés Szegeden. Rendszer, technika, kalóriakeret, követés. Jelentkezés után 24 órán belül válaszolok." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://botondprikk.vercel.app/" />
+  <meta property="og:image" content="https://botondprikk.vercel.app/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Személyi edzés Szeged - Botond Prikk" />
+  <meta name="twitter:description" content="Személyi, páros és online edzés Szegeden. Rendszer, technika, kalóriakeret, követés. Jelentkezés után 24 órán belül válaszolok." />
+  <meta name="twitter:image" content="https://botondprikk.vercel.app/og-image.svg" />
 
   <!-- Offline-friendly: system font stack (no external requests) -->
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/layout.css" />
   <link rel="stylesheet" href="styles/components.css" />
   <link rel="stylesheet" href="styles/responsive.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Prikk Botond",
+    "url": "https://botondprikk.vercel.app/",
+    "areaServed": "Szeged",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Szeged",
+      "addressCountry": "HU"
+    },
+    "serviceType": [
+      "Személyi edzés",
+      "Páros edzés",
+      "Online coaching"
+    ],
+    "email": "mailto:botond.prikk@gmail.com",
+    "sameAs": [
+      "https://www.instagram.com/botondprikk/"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -18,9 +56,12 @@
   <div class="topbar">
     <div class="container">
       <div class="inner">
-        <div class="brand" aria-label="Botond Prikk">
+        <div class="brand brand-lg" aria-label="Prikk Botond személyi edző">
           <span class="mark" aria-hidden="true"></span>
-          <span>Botond Prikk</span>
+          <div class="brand-text">
+            <span class="brand-name">Prikk Botond</span>
+            <span class="brand-role">személyi edző</span>
+          </div>
         </div>
 
         <nav class="nav" aria-label="Oldal navigáció">
@@ -31,7 +72,6 @@
           <a href="#helyszin">Helyszín</a>
         </nav>
 
-        <a class="btn btn-primary" href="#jelentkezes">Jelentkezem edzésre</a>
       </div>
     </div>
   </div>
@@ -43,22 +83,26 @@
         <div class="card pad">
           <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Személyi & online edzés • Szeged</span>
           <h1>Fogyás és izomépítés rendszerben</h1>
-          <p class="lead">
-            Gyúrós konditeremben, gépekkel és súlyzókkal. Személyi, páros vagy online formában.
-            Kalória és makró keret, technika javítás, követés. Jelentkezés után 24 órán belül visszahívlak.
+          <p class="lead lead-offset">
+            Fogyj le és építs izmot úgy, hogy végre értsd is, mit csinálsz.
+            Edzésrendszer, technika, kalóriakeret, követés. Nem találgatás, hanem haladás.
           </p>
 
           <div class="heroActions">
             <a class="btn btn-primary" href="#jelentkezes">Jelentkezem edzésre</a>
             <a class="btn" href="#csomagok">Csomagok</a>
           </div>
+          <div class="quickLinks" aria-label="Gyors ugrás">
+            <a href="#csomagok">Csomagok</a>
+            <a href="#jelentkezes">Jelentkezés</a>
+          </div>
+          <p class="dmHint">Kérdésed van? <a href="https://www.instagram.com/botondprikk/" target="_blank" rel="noopener noreferrer">Írj DM-ben</a></p>
 
           <div class="accentLine" role="presentation"></div>
 
           <p class="mini">
             <b>Fókusz:</b> helyes kivitelezés • fokozatos terhelés • hosszú távú szemlélet
           </p>
-          <p class="mini mini-tight">Nem kell DM, itt minden infó egyben van.</p>
         </div>
 
         <aside class="card pad">
@@ -70,7 +114,7 @@
               </div>
               <div class="stat">
                 <div class="k">Fókusz</div>
-                <div class="v">Izom és erő, plusz fogyás</div>
+                <div class="v">Izom és erő, fogyás</div>
               </div>
               <div class="stat">
                 <div class="k">Szint</div>
@@ -284,6 +328,79 @@
     </div>
   </section>
 
+  <!-- EREDMÉNYEK -->
+  <section id="eredmenyek">
+    <div class="container">
+      <div class="card pad">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Eredmények a gyakorlatban</span>
+        <h2 class="section-title">Kicsi, de fontos lépések</h2>
+        <p class="lead lead-max-80">
+          Rövid, konkrét példák arra, hogyan néz ki a haladás, amikor van rendszer és követés.
+        </p>
+
+        <div class="resultGrid" role="list">
+          <div class="resultCard" role="listitem">
+            <div class="resultMetric">8 hét alatt -4 cm derék</div>
+            <div class="resultMeta">Bence T. • 2 edzés/hét</div>
+            <p class="resultText">Stabil kalóriakeret, pontos kivitelezés, és heti check-in után jött a látványosabb változás.</p>
+          </div>
+          <div class="resultCard" role="listitem">
+            <div class="resultMetric">Guggolás +15 kg</div>
+            <div class="resultMeta">Dóra K. • 10 hét</div>
+            <p class="resultText">Technika javítás, fokozatos terhelés, és edzésnapló alapján finomított program.</p>
+          </div>
+          <div class="resultCard" role="listitem">
+            <div class="resultMetric">-3 kg és jobb közérzet</div>
+            <div class="resultMeta">Ádám P. • 6 hét</div>
+            <p class="resultText">Rendszeres edzés, egyszerű étkezési keret, és következetes rutin.</p>
+          </div>
+        </div>
+
+        <p class="mini mini-tight">Az eredmények egyénfüggők, a kiindulópont és a következetesség számít.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENDÉGVÉLEMÉNYEK -->
+  <section id="velemenyek">
+    <div class="container">
+      <div class="card pad">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Vendégvélemények</span>
+        <h2 class="section-title">Visszajelzések a közös munkáról</h2>
+        <p class="lead lead-max-80">
+          Rövid, valós élmények arról, milyen a közös munka. Fejlesztési módban minta vélemények, később cserélhetők.
+        </p>
+
+        <div class="quoteGrid" role="list">
+          <div class="quoteCard" role="listitem">
+            <div class="quoteHead">
+              <div class="quoteName">Gábor K.</div>
+              <span class="sampleTag">Minta vélemény</span>
+            </div>
+            <p class="quoteText">8 hét alatt sokkal stabilabb lett a technikám, és érzem, hogy haladok. A rendszer és a visszajelzés adja a lendületet.</p>
+            <div class="quoteMeta">2 hónap együtt</div>
+          </div>
+          <div class="quoteCard" role="listitem">
+            <div class="quoteHead">
+              <div class="quoteName">Nóra B.</div>
+              <span class="sampleTag">Minta vélemény</span>
+            </div>
+            <p class="quoteText">A kalóriakeret és a heti check-in nagyon sokat segített. Nem találgatok, tudom, mit kell csinálnom.</p>
+            <div class="quoteMeta">6 hét együtt</div>
+          </div>
+          <div class="quoteCard" role="listitem">
+            <div class="quoteHead">
+              <div class="quoteName">András M.</div>
+              <span class="sampleTag">Minta vélemény</span>
+            </div>
+            <p class="quoteText">Páros edzésre jöttünk, végre van irány és ritmus. Ketten is könnyebb tartani.</p>
+            <div class="quoteMeta">10 hét együtt</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- JELENTKEZÉSI SZEKCIÓ -->
   <section id="jelentkezes">
     <div class="container">
@@ -358,6 +475,11 @@
             </div>
           </div>
 
+          <div class="field">
+            <label for="message">Üzenet (opcionális)</label>
+            <textarea id="message" name="message" rows="4" placeholder="Pl. cél, időbeosztás, kérdések"></textarea>
+          </div>
+
           <button class="btn btn-primary" type="submit" aria-label="Jelentkezem">Jelentkezem</button>
 
           <div class="hint">
@@ -367,7 +489,7 @@
 
           <div class="success" id="successBox" role="status" aria-live="polite"></div>
           <div class="error" id="errorBox" role="alert">
-            Kérlek, töltsd ki a kötelező mezőket érvényes adatokkal (név, email, telefonszám).
+            Kérlek, add meg a neved, érvényes email címed és telefonszámod.
           </div>
         </form>
       </div>
@@ -386,10 +508,6 @@
             <p class="lead m-0">
               <b>Szeged</b><br>
               Etelka sor 1-A épület, 6723
-            </p>
-            <div class="accentLine" role="presentation"></div>
-            <p class="lead lead-xs m-0">
-              Ha személyi edzésre jössz, itt találkozunk. Online edzésnél természetesen nem helyhez kötött.
             </p>
           </div>
 
@@ -421,6 +539,10 @@
     </div>
   </section>
 
+  <div class="mobileCta" role="navigation" aria-label="Gyors jelentkezés">
+    <a class="btn btn-primary" href="#jelentkezes">Jelentkezem</a>
+  </div>
+
   <!-- FOOTER -->
   <footer>
     <div class="container">
@@ -428,7 +550,7 @@
         <div class="stack footer-stack">
           <div class="footer-brand">
             <span class="mark" aria-hidden="true"></span>
-            <b class="text-strong">Botond Prikk</b>
+            <b class="text-strong">Prikk Botond</b>
           </div>
           <div>Kapcsolat: <a href="mailto:botond.prikk@gmail.com" class="footer-link">botond.prikk@gmail.com</a></div>
           <div><a href="adatkezeles.html" class="footer-link">Adatkezelési tájékoztató</a></div>

@@ -2,6 +2,8 @@
   .heroGrid{ grid-template-columns: 1fr; }
   .serviceGrid{ grid-template-columns: 1fr; }
   .packageGrid{ grid-template-columns: 1fr; }
+  .resultGrid{ grid-template-columns: 1fr; }
+  .quoteGrid{ grid-template-columns: 1fr; }
   .locationGrid{ grid-template-columns: 1fr; }
   .bullets{ grid-template-columns: 1fr; }
   section{ padding: 58px 0; }
@@ -11,4 +13,6 @@
   .grid2{ grid-template-columns: 1fr; }
   .statGrid{ grid-template-columns: 1fr; }
   .hero{ padding-top: 44px; }
+  body{ padding-bottom: 72px; }
+  .mobileCta{ display:flex; }
 }

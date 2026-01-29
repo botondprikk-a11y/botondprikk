@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#07070A"/>
+      <stop offset="1" stop-color="#0D0D12"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1">
+      <stop offset="0" stop-color="#9B5CFF"/>
+      <stop offset="1" stop-color="#C66BFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="160" cy="130" r="14" fill="url(#accent)"/>
+  <text x="220" y="150" fill="#F2F2F7" font-size="46" font-family="Arial, Helvetica, sans-serif" font-weight="700">
+    Prikk Botond
+  </text>
+  <text x="220" y="200" fill="#B7B7C7" font-size="22" font-family="Arial, Helvetica, sans-serif" letter-spacing="2">
+    SZEMELYI EDZO
+  </text>
+  <text x="160" y="310" fill="#F2F2F7" font-size="52" font-family="Arial, Helvetica, sans-serif" font-weight="700">
+    Szemelyi edzes Szeged
+  </text>
+  <text x="160" y="370" fill="#B7B7C7" font-size="24" font-family="Arial, Helvetica, sans-serif">
+    Rendszer, technika, kaloriakeret, kovetes
+  </text>
+</svg>

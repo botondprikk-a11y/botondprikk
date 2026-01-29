@@ -50,7 +50,7 @@
 
     if (success === '1' && successBox) {
       successBox.style.display = 'block';
-      successBox.textContent = 'Köszi! Megkaptam a jelentkezésed, hamarosan visszajelzek.';
+      successBox.textContent = 'Köszi! Megkaptam a jelentkezésed.\nMi történik ezután?\n• 24 órán belül válaszolok\n• Egyeztetünk célokat, időpontot, keretet';
       // Optional: clear query param so refresh doesn't keep showing it
       try {
         const url = new URL(window.location.href);
@@ -65,6 +65,11 @@
       if (at < 1) return false;
       const dot = s.lastIndexOf('.');
       return dot > at + 1 && dot < s.length - 1;
+    }
+    function isValidPhone(v){
+      const s = String(v || '').trim();
+      const digits = s.replace(/\D/g, '');
+      return digits.length >= 7;
     }
     function clean(v){ return String(v || '').trim(); }
 
@@ -108,9 +113,21 @@
         const name = clean(form.name.value);
         const email = clean(form.email.value);
         const phone = clean(form.phone.value);
+        const gotcha = form.querySelector('input[name="_gotcha"]');
 
-        if (!name || !phone || !isValidEmail(email)) {
+        if (gotcha && gotcha.value.trim() !== '') {
           e.preventDefault();
+          return;
+        }
+
+        const missing = [];
+        if (!name) missing.push('név');
+        if (!isValidEmail(email)) missing.push('email');
+        if (!isValidPhone(phone)) missing.push('telefonszám');
+
+        if (missing.length > 0) {
+          e.preventDefault();
+          errorBox.textContent = 'Kérlek, add meg a következő mezőket érvényes formában: ' + missing.join(', ') + '.';
           errorBox.style.display = 'block';
           try { errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (_) {}
           return;
@@ -121,7 +138,7 @@
           e.preventDefault();
           if (successBox) {
             successBox.style.display = 'block';
-            successBox.textContent = 'Köszi! (Demo) A preview környezetben nem küldünk ténylegesen. Éles oldalon (Vercel) a Formspree fogja elküldeni a jelentkezést, és én megkapom emailben.';
+            successBox.textContent = 'Köszi! (Demo)\nMi történik ezután?\n• 24 órán belül válaszolok\n• Egyeztetünk célokat, időpontot, keretet\nÉles oldalon a Formspree fogja elküldeni a jelentkezést, és én megkapom emailben.';
           }
           try { form.reset(); } catch (_) {}
           return;

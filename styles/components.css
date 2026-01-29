@@ -11,6 +11,11 @@
   padding: 14px 0;
 }
 .brand{ display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.5px; }
+.brand-text{ display:flex; flex-direction:column; line-height: 1.05; }
+.brand-name{ font-size: 16px; letter-spacing: .4px; }
+.brand-role{ font-size: 12px; color: var(--muted); font-weight: 600; letter-spacing: .6px; text-transform: uppercase; }
+.brand-lg .brand-name{ font-size: 18px; }
+.brand-lg .brand-role{ font-size: 11px; }
 .mark{
   width:12px; height:12px; border-radius:4px;
   background: linear-gradient(135deg, var(--purple), var(--purple2));
@@ -43,6 +48,18 @@
 }
 .btn-primary:hover{ filter: brightness(1.03); }
 .btn-primary:focus, .btn:focus{ outline: 2px solid rgba(155,92,255,.65); outline-offset: 3px; }
+
+.quickLinks{
+  display:flex;
+  gap:12px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.quickLinks a{ padding: 4px 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); }
+.quickLinks a:hover{ border-color: rgba(155,92,255,.35); color: var(--text); }
+.dmHint{ margin: 8px 0 0; font-size: 13px; color: var(--muted); }
+.dmHint a{ color: rgba(198,107,255,.95); text-decoration: underline; text-underline-offset: 3px; }
 
 /* Cards and accents */
 .card{
@@ -145,7 +162,7 @@ details.faq p{ margin: 10px 0 0; color: var(--muted); }
 form{ display:grid; gap: 12px; margin-top: 14px; }
 .field{ display:flex; flex-direction:column; gap: 8px; }
 label{ font-size: 13px; color: rgba(242,242,247,.88); }
-input, select{
+input, select, textarea{
   width:100%;
   background: rgba(255,255,255,.04);
   border: 1px solid rgba(255,255,255,.12);
@@ -156,7 +173,8 @@ input, select{
   outline: none;
   transition: border-color .12s ease, background .12s ease;
 }
-input:focus, select:focus{ border-color: rgba(155,92,255,.55); background: rgba(155,92,255,.08); }
+textarea{ min-height: 110px; resize: vertical; }
+input:focus, select:focus, textarea:focus{ border-color: rgba(155,92,255,.55); background: rgba(155,92,255,.08); }
 
 /* Select (dropdown) - make text always visible even in Safari/preview */
 select{
@@ -198,6 +216,38 @@ select option{ background: #0D0D12; color: #F2F2F7; }
 .success{ border-color: rgba(155,92,255,.45); background: rgba(155,92,255,.10); }
 .error{ border-color: rgba(255,80,120,.35); background: rgba(255,80,120,.08); }
 
+/* Results */
+.resultCard{
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+}
+.resultMetric{ font-size: 16px; font-weight: 700; letter-spacing: -0.3px; }
+.resultMeta{ margin-top: 6px; font-size: 12px; color: var(--muted); }
+.resultText{ margin: 10px 0 0; color: rgba(242,242,247,.88); font-size: 14px; }
+
+/* Testimonials */
+.quoteCard{
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+}
+.quoteHead{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.quoteName{ font-weight: 700; letter-spacing: -0.2px; }
+.sampleTag{
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  color: var(--muted);
+}
+.quoteText{ margin: 10px 0 0; color: rgba(242,242,247,.9); font-size: 14px; }
+.quoteMeta{ margin-top: 8px; font-size: 12px; color: var(--muted); }
+
 /* Location */
 .map{ border-radius: 18px; overflow:hidden; border: 1px solid rgba(255,255,255,.10); background: rgba(0,0,0,.18); min-height: 260px; }
 .mapPlaceholder{ height:100%; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:18px; gap:12px; color:rgba(242,242,247,.90); }
@@ -215,6 +265,7 @@ select option{ background: #0D0D12; color: #F2F2F7; }
 .lead-max-85{ max-width: 85ch; }
 .lead-sm{ font-size: 16px; }
 .lead-xs{ font-size: 14px; }
+.lead-offset{ margin-top: 10px; }
 .mini-tight{ margin-top: 10px; }
 .mt-12{ margin-top: 12px; }
 .mt-18{ margin-top: 18px; }
@@ -226,6 +277,21 @@ select option{ background: #0D0D12; color: #F2F2F7; }
 .footer-link{ color: rgba(198,107,255,.95); text-decoration: underline; text-underline-offset: 3px; }
 .footer-legal{ max-width: 420px; color: rgba(242,242,247,.55); }
 .hidden{ display:none; }
+
+/* Mobile CTA */
+.mobileCta{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 14px 12px;
+  background: linear-gradient(to top, rgba(7,7,10,.95), rgba(7,7,10,.35));
+  border-top: 1px solid rgba(255,255,255,.08);
+  display:none;
+  justify-content:center;
+  z-index: 60;
+}
+.mobileCta .btn{ width: min(420px, 92vw); }
 
 /* Footer */
 footer{ padding: 26px 0 40px; border-top: 1px solid rgba(255,255,255,.06); color: rgba(242,242,247,.68); font-size: 13px; }

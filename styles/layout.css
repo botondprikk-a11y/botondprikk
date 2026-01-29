@@ -11,6 +11,8 @@ section{ padding: 72px 0; }
 .bullets{ display:grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0 0; padding:0; list-style:none; }
 .serviceGrid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 18px; }
 .packageGrid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+.resultGrid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
+.quoteGrid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 18px; }
 .chipGrid{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 14px; }
 .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .locationGrid{ display:grid; grid-template-columns: 1.1fr .9fr; gap: 14px; align-items: stretch; margin-top: 18px; }
