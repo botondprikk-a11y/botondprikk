@@ -104,6 +104,40 @@ details.faq p{ margin: 10px 0 0; color: var(--muted); }
 .service h3{ margin: 0 0 8px; font-size: 16px; letter-spacing: -.3px; }
 .service p{ margin:0; color: var(--muted); font-size: 14px; }
 
+/* Packages */
+.package{
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+}
+.package.featured{
+  background: linear-gradient(180deg, rgba(155,92,255,.12), rgba(0,0,0,.18));
+  border-color: rgba(155,92,255,.30);
+  box-shadow: 0 10px 30px rgba(155,92,255,.14);
+}
+.package h3{ margin: 0; font-size: 16px; letter-spacing: -.3px; }
+.package-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.badge{
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(155,92,255,.55);
+  background: rgba(155,92,255,.20);
+  color: var(--text);
+}
+.package-kicker, .package-why{ margin: 0; color: var(--muted); font-size: 14px; }
+.package-block{ display:flex; flex-direction:column; gap: 8px; }
+.package-label{ font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+.package-list{ margin: 0; padding-left: 18px; color: rgba(242,242,247,.9); font-size: 14px; }
+.package-list li{ margin: 6px 0; }
+.package .btn{ margin-top: 4px; align-self:flex-start; }
+
 .chip{ display:inline-flex; align-items:center; gap:10px; padding: 10px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.10); background: rgba(255,255,255,.03); color: rgba(242,242,247,.92); font-size: 14px; }
 .chip .miniDot{ width:8px; height:8px; border-radius:999px; background: rgba(198,107,255,.95); box-shadow: 0 0 14px rgba(198,107,255,.40); }
 
@@ -138,6 +172,19 @@ select:hover{ border-color: rgba(155,92,255,.25); }
 select option{ background: #0D0D12; color: #F2F2F7; }
 
 .hint{ margin-top: 10px; color: rgba(242,242,247,.70); font-size: 12px; }
+.checklist{
+  display:flex;
+  flex-direction:column;
+  gap: 8px;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  max-width: 60ch;
+}
+.checklist-title{ font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+.checklist ul{ margin: 0; padding-left: 18px; color: rgba(242,242,247,.88); font-size: 14px; }
+.checklist li{ margin: 6px 0; }
 .success, .error{
   display:none;
   margin-top: 10px;

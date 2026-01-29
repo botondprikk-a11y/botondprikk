@@ -1,6 +1,7 @@
 @media (max-width: 940px){
   .heroGrid{ grid-template-columns: 1fr; }
   .serviceGrid{ grid-template-columns: 1fr; }
+  .packageGrid{ grid-template-columns: 1fr; }
   .locationGrid{ grid-template-columns: 1fr; }
   .bullets{ grid-template-columns: 1fr; }
   section{ padding: 58px 0; }

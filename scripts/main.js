@@ -26,6 +26,11 @@
         if (!href || href === '#') return;
         const target = document.querySelector(href);
         if (!target) return;
+        const typeValue = a.getAttribute('data-type');
+        if (typeValue) {
+          const typeSelect = document.getElementById('type');
+          if (typeSelect) typeSelect.value = typeValue;
+        }
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         try { history.pushState(null, '', href); } catch (_) {}
@@ -45,7 +50,7 @@
 
     if (success === '1' && successBox) {
       successBox.style.display = 'block';
-      successBox.textContent = 'Köszi! Megkaptam a jelentkezésed — hamarosan visszajelzek.';
+      successBox.textContent = 'Köszi! Megkaptam a jelentkezésed, hamarosan visszajelzek.';
       // Optional: clear query param so refresh doesn't keep showing it
       try {
         const url = new URL(window.location.href);
@@ -65,7 +70,7 @@
 
     // Minimal client-side validation (nice UX). Formspree will still receive POST.
     // NOTE: A ChatGPT preview / sandbox gyakran iframe-ben fut és biztonsági okból blokkolja a form POST-ot.
-    // Ilyenkor ne is próbáljunk hálózati kérést indítani — csak mutassunk demo üzenetet.
+    // Ilyenkor ne is próbáljunk hálózati kérést indítani, csak mutassunk demo üzenetet.
 
     const host = (window.location.hostname || '').toLowerCase();
     const proto = (window.location.protocol || '').toLowerCase();
