@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Személyi Edző Platform | Edzői admin egy helyen</title>
+    <meta
+      name="description"
+      content="Személyi edzőknek készült platform online és offline ügyfélkezeléshez, bérletkövetéshez és bevétel összesítéshez."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-one" aria-hidden="true"></div>
+    <div class="bg-orb orb-two" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#">
+          <span class="brand-mark">E+</span>
+          <span class="brand-text">Energize</span>
+        </a>
+        <nav class="nav" data-nav>
+          <a href="#platform">Platform</a>
+          <a href="#funkciok">Funkciók</a>
+          <a href="#arak">Árak</a>
+          <a href="#idopont">Regisztráció</a>
+        </nav>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false">
+          Menü
+        </button>
+          <a class="btn primary" href="login.html">Bejelentkezés</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="platform">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow reveal" style="--delay: 0.05s">Személyi edzőknek</p>
+            <h1 class="reveal" style="--delay: 0.12s">
+              Végre egy helyen az edzői admin, online és offline.
+            </h1>
+            <p class="lead reveal" style="--delay: 0.2s">
+              Nem többé szétszórt Drive táblák. Vendégkezelés, bérletkövetés,
+              lemondások és bevétel összesítés egy átlátható rendszerben.
+            </p>
+            <div class="hero-actions reveal" style="--delay: 0.3s">
+              <a class="btn primary" href="#idopont">Fiók létrehozása</a>
+              <a class="btn ghost" href="#funkciok">Funkciók megnézése</a>
+            </div>
+            <div class="hero-stats reveal" style="--delay: 0.4s">
+              <div>
+                <strong>1</strong>
+                <span>edzői dashboard</span>
+              </div>
+              <div>
+                <strong>2</strong>
+                <span>üzemmód (online + offline)</span>
+              </div>
+              <div>
+                <strong>1 link</strong>
+                <span>vendég meghívás</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-card reveal" style="--delay: 0.25s">
+              <p class="card-title">Mai áttekintés</p>
+              <h3>Edzések rögzítve</h3>
+              <p class="card-meta">4 megtartott · 1 lemondott</p>
+              <ul>
+                <li>3 vendég bérlete frissítve</li>
+                <li>2 új meghívó kiküldve</li>
+                <li>Bevétel összesítés naprakész</li>
+              </ul>
+              <button class="btn ghost">Megnyitás</button>
+            </div>
+            <div class="hero-chip reveal" style="--delay: 0.4s">
+              Vendégportál · bérletkövetés · átlátható bevétel
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section features">
+        <div class="container">
+          <div class="section-title reveal" style="--delay: 0.05s">
+            <p class="eyebrow">Online edzések</p>
+            <h2>Online vendégek kezelése egy átlátható edzői nézetben.</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card reveal" style="--delay: 0.1s">
+              <h3>Összes vendég áttekintés</h3>
+              <p>Ki nem check-in-elt, ki hol tart, és kinél esedékes a fizetés.</p>
+            </article>
+            <article class="feature-card reveal" style="--delay: 0.18s">
+              <h3>Vendégprofil alap adatok</h3>
+              <p>Edzésterv, napi kalóriabevitel, testsúly és célok egy nézetben.</p>
+            </article>
+            <article class="feature-card reveal" style="--delay: 0.26s">
+              <h3>Haladás grafikonok</h3>
+              <p>Testsúly és teljesítmény trendek, hogy lásd ki hogyan halad.</p>
+            </article>
+            <article class="feature-card reveal" style="--delay: 0.34s">
+              <h3>Heti check-in és napi log</h3>
+              <p>Heti check-in és napi log külső appból beírva, rendezett formában.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section programs" id="funkciok">
+        <div class="container">
+          <div class="section-title reveal" style="--delay: 0.05s">
+            <p class="eyebrow">Offline edzések</p>
+            <h2>Manuális vendégek és bérletek kezelése, ha helyszíni edzés is van.</h2>
+          </div>
+          <div class="program-grid">
+            <article class="program-card reveal" style="--delay: 0.1s">
+              <h3>Manuális vendég hozzáadás</h3>
+              <p>Offline vendégek felvétele gyorsan, alap adatokkal.</p>
+              <span>Hibrid opció</span>
+            </article>
+            <article class="program-card reveal" style="--delay: 0.18s">
+              <h3>Bérlet beállítás</h3>
+              <p>Megadod hány alkalmas és mennyiért vette a vendég.</p>
+              <span>Rugalmas árak</span>
+            </article>
+            <article class="program-card reveal" style="--delay: 0.26s">
+              <h3>Alkalom követés</h3>
+              <p>Látod hány alkalom van még, mikor volt utoljára.</p>
+              <span>Átlátható admin</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section coaches">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Kinek szól?</p>
+            <h2>Edzőknek, akik rendszert akarnak a káosz helyett.</h2>
+          </div>
+          <div class="coach-grid">
+            <article class="coach-card">
+              <div class="avatar">ON</div>
+              <h3>Online edzők</h3>
+              <p>Akik most indítanák az online ügyfélkört, tiszta folyamattal.</p>
+            </article>
+            <article class="coach-card">
+              <div class="avatar">HY</div>
+              <h3>Hibrid edzők</h3>
+              <p>Online + offline vendégek követése egy platformon.</p>
+            </article>
+            <article class="coach-card">
+              <div class="avatar">OF</div>
+              <h3>Offline fókusz</h3>
+              <p>Akik manuálisan kezelik a bérleteket, de már digitalizálnának.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Eredmény</p>
+            <h2>Tisztább folyamat, kevesebb admin, több edzés.</h2>
+          </div>
+          <div class="testimonial-grid">
+            <blockquote>
+              <p>"Végre látom, kinek hány alkalma van még, nem keresgélek táblákban."</p>
+              <span>Személyi edző</span>
+            </blockquote>
+            <blockquote>
+              <p>"Az online és offline vendégek egy helyen vannak, nincs párhuzamos admin."</p>
+              <span>Hibrid edző</span>
+            </blockquote>
+            <blockquote>
+              <p>"A bevétel összesítővel heti 10 perc alatt átlátom a hónapot."</p>
+              <span>Stúdió edző</span>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="section pricing" id="arak">
+        <div class="container">
+          <div class="section-title reveal" style="--delay: 0.05s">
+            <p class="eyebrow">Árak</p>
+            <h2>Edzői előfizetés, vendég limit szerint.</h2>
+          </div>
+          <div class="pricing-grid">
+            <article class="price-card reveal" style="--delay: 0.1s">
+              <h3>Start</h3>
+              <p class="price">19 900 Ft</p>
+              <span>/ hó · edző</span>
+              <ul>
+                <li>10 vendégig</li>
+                <li>Online + offline ügyfelek</li>
+                <li>Alkalomkövetés</li>
+              </ul>
+              <a class="btn ghost" href="#idopont">Kezdés</a>
+            </article>
+            <article class="price-card featured reveal" style="--delay: 0.2s">
+              <div class="badge">Legnépszerűbb</div>
+              <h3>Pro</h3>
+              <p class="price">34 900 Ft</p>
+              <span>/ hó · edző</span>
+              <ul>
+                <li>15 vendégig</li>
+                <li>Bevétel összesítő</li>
+                <li>Vendégportál</li>
+                <li>Prioritás támogatás</li>
+              </ul>
+              <a class="btn primary" href="#idopont">Kezdés</a>
+            </article>
+            <article class="price-card reveal" style="--delay: 0.3s">
+              <h3>Team</h3>
+              <p class="price">49 900 Ft</p>
+              <span>/ hó · edző</span>
+              <ul>
+                <li>25 vendégig</li>
+                <li>Edzői csapat kezelés</li>
+                <li>Haladó riportok</li>
+              </ul>
+              <a class="btn ghost" href="#idopont">Kezdés</a>
+            </article>
+          </div>
+          <p class="form-note">
+            A számlázás és előfizetés automatizálás fejlesztés alatt áll, a korai verziót
+            fokozatosan bővítjük.
+          </p>
+        </div>
+      </section>
+
+      <section class="section schedule">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Hogyan működik?</p>
+            <h2>Három egyszerű lépés az induláshoz.</h2>
+          </div>
+          <div class="schedule-grid">
+            <div class="schedule-day">
+              <span>1. lépés</span>
+              <strong>Regisztrálsz edzőként</strong>
+            </div>
+            <div class="schedule-day">
+              <span>2. lépés</span>
+              <strong>Meghívót küldesz a vendégeknek</strong>
+            </div>
+            <div class="schedule-day">
+              <span>3. lépés</span>
+              <strong>Rögzíted az órákat és bérleteket</strong>
+            </div>
+            <div class="schedule-day">
+              <span>+ offline</span>
+              <strong>Manuális vendégek hozzáadása</strong>
+            </div>
+            <div class="schedule-day">
+              <span>+ riport</span>
+              <strong>Bevétel összesítő egy nézetben</strong>
+            </div>
+            <div class="schedule-day">
+              <span>+ skála</span>
+              <strong>Vendég limit csomag szerint</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta" id="idopont">
+        <div class="container cta-grid">
+          <div class="reveal" style="--delay: 0.1s">
+            <p class="eyebrow">Regisztráció</p>
+            <h2>Hozz létre edzői fiókot és kezdd el a rendszerezést.</h2>
+            <p>
+              Add meg az alap adatokat, és állítsd be az online és offline vendégeidet.
+              A bejelentkezés előfizetéshez kötött.
+            </p>
+          </div>
+          <form class="cta-form reveal" style="--delay: 0.2s">
+            <label>
+              Edző neve
+              <input type="text" placeholder="Teljes név" />
+            </label>
+            <label>
+              Email
+              <input type="email" placeholder="email@pelda.hu" />
+            </label>
+            <label>
+              Online és offline vendégek
+              <input type="text" placeholder="Pl. 12 online + 3 offline" />
+            </label>
+            <button class="btn primary" type="submit">Fiók létrehozása</button>
+            <p class="form-note">A hozzáférés előfizetéshez kötött.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="#">
+            <span class="brand-mark">E+</span>
+            <span class="brand-text">Energize</span>
+          </a>
+          <p>Edzői admin egy helyen, hogy több időd maradjon edzeni.</p>
+        </div>
+        <div>
+          <h4>Kapcsolat</h4>
+          <p>hello@energize.hu</p>
+          <p>Budapest · Online</p>
+        </div>
+        <div>
+          <h4>Gyors linkek</h4>
+          <a href="#funkciok">Funkciók</a>
+          <a href="#arak">Árak</a>
+          <a href="#idopont">Regisztráció</a>
+        </div>
+      </div>
+      <p class="footer-note">© 2024 Energize. Minden jog fenntartva.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

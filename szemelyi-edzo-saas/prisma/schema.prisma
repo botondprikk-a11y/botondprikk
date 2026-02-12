@@ -1,0 +1,279 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  COACH
+  CLIENT
+}
+
+enum CoachClientStatus {
+  INVITED
+  ACTIVE
+  PAUSED
+}
+
+enum OfflineSessionStatus {
+  HELD
+  CANCELLED
+  NO_SHOW
+}
+
+model User {
+  id           String      @id @default(cuid())
+  role         Role
+  name         String
+  email        String      @unique
+  passwordHash String
+  createdAt    DateTime    @default(now())
+
+  coachClients CoachClient[] @relation("Coach")
+  clientLinks  CoachClient[] @relation("Client")
+  invites      Invite[]
+  sessions     Session[]
+  templates    ProgramTemplate[]
+  clientPrograms ClientProgram[] @relation("ProgramClient")
+  workoutSessions WorkoutSession[]
+  nutritionGoals NutritionGoal[]
+  nutritionLogs NutritionLog[]
+  weightLogs   WeightLog[]
+  progressPhotos ProgressPhoto[]
+  checkIns     CheckIn[]
+  offlinePackages OfflinePackage[]
+  messagesSent Message[] @relation("MessageSender")
+  messagesReceived Message[] @relation("MessageReceiver")
+  notificationPreference NotificationPreference?
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  expiresAt DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model CoachClient {
+  id       String             @id @default(cuid())
+  coachId  String
+  clientId String
+  status   CoachClientStatus  @default(INVITED)
+
+  coach  User @relation("Coach", fields: [coachId], references: [id], onDelete: Cascade)
+  client User @relation("Client", fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@unique([coachId, clientId])
+}
+
+model Invite {
+  id        String   @id @default(cuid())
+  coachId   String
+  email     String
+  name      String?
+  token     String   @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime @default(now())
+
+  coach User @relation(fields: [coachId], references: [id], onDelete: Cascade)
+}
+
+model ProgramTemplate {
+  id          String   @id @default(cuid())
+  coachId     String
+  name        String
+  description String?
+  createdAt   DateTime @default(now())
+
+  coach User @relation(fields: [coachId], references: [id], onDelete: Cascade)
+  days  ProgramDay[]
+  assignments ClientProgram[]
+}
+
+model ProgramDay {
+  id         String   @id @default(cuid())
+  templateId String
+  dayName    String
+  order      Int
+
+  template ProgramTemplate @relation(fields: [templateId], references: [id], onDelete: Cascade)
+  exercises ProgramExercise[]
+}
+
+model ProgramExercise {
+  id         String   @id @default(cuid())
+  dayId      String
+  name       String
+  notes      String?
+  targetSets Int?
+  targetReps String?
+  restSec    Int?
+  targetRpe  Int?
+
+  day ProgramDay @relation(fields: [dayId], references: [id], onDelete: Cascade)
+}
+
+model ClientProgram {
+  id         String   @id @default(cuid())
+  clientId   String
+  templateId String
+  assignedAt DateTime @default(now())
+
+  client   User @relation("ProgramClient", fields: [clientId], references: [id], onDelete: Cascade)
+  template ProgramTemplate @relation(fields: [templateId], references: [id], onDelete: Cascade)
+
+  @@unique([clientId, templateId])
+}
+
+model WorkoutSession {
+  id         String   @id @default(cuid())
+  clientId   String
+  date       DateTime
+  completedAt DateTime?
+  notes      String?
+
+  client User @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  sets   WorkoutSetLog[]
+}
+
+model WorkoutSetLog {
+  id            String   @id @default(cuid())
+  sessionId     String
+  exerciseName  String
+  setIndex      Int
+  weight        Float
+  reps          Int
+  rpe           Float?
+  isPr          Boolean @default(false)
+  oneRmEstimate Float
+
+  session WorkoutSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+}
+
+model NutritionGoal {
+  id        String   @id @default(cuid())
+  clientId  String
+  kcal      Int
+  proteinG  Int
+  carbsG    Int
+  fatG      Int
+  updatedAt DateTime @default(now())
+
+  client User @relation(fields: [clientId], references: [id], onDelete: Cascade)
+}
+
+model NutritionLog {
+  id        String   @id @default(cuid())
+  clientId  String
+  date      DateTime
+  kcal      Int
+  proteinG  Int
+  carbsG    Int
+  fatG      Int
+  note      String?
+
+  client User @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  @@unique([clientId, date])
+}
+
+model WeightLog {
+  id       String   @id @default(cuid())
+  clientId String
+  date     DateTime
+  kg       Float
+
+  client User @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  @@unique([clientId, date])
+}
+
+model ProgressPhoto {
+  id         String   @id @default(cuid())
+  clientId   String
+  uploadedAt DateTime @default(now())
+  filePath   String
+  weekKey    String
+
+  client User @relation(fields: [clientId], references: [id], onDelete: Cascade)
+}
+
+model CheckIn {
+  id            String   @id @default(cuid())
+  clientId      String
+  weekKey       String
+  weight        Float?
+  stepsAvg      Int
+  sleepQuality  Int
+  stress        Int
+  energy        Int
+  hunger        Int
+  adherence     Int
+  note          String?
+  coachComment  String?
+  nextWeekFocus String?
+  createdAt     DateTime @default(now())
+
+  client User @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  @@unique([clientId, weekKey])
+}
+
+model OfflinePackage {
+  id             String   @id @default(cuid())
+  coachId        String
+  clientName     String
+  type           String
+  price          Int
+  totalSessions  Int
+  sessionsLeft   Int
+  expiryDate     DateTime?
+
+  coach User @relation(fields: [coachId], references: [id], onDelete: Cascade)
+  sessions OfflineSession[]
+  payments OfflinePayment[]
+}
+
+model OfflineSession {
+  id         String   @id @default(cuid())
+  packageId  String
+  date       DateTime
+  status     OfflineSessionStatus
+  note       String?
+
+  package OfflinePackage @relation(fields: [packageId], references: [id], onDelete: Cascade)
+}
+
+model OfflinePayment {
+  id        String   @id @default(cuid())
+  packageId String
+  date      DateTime
+  amount    Int
+  note      String?
+
+  package OfflinePackage @relation(fields: [packageId], references: [id], onDelete: Cascade)
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  senderId   String
+  receiverId String
+  content    String
+  createdAt  DateTime @default(now())
+  readAt     DateTime?
+
+  sender   User @relation("MessageSender", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver User @relation("MessageReceiver", fields: [receiverId], references: [id], onDelete: Cascade)
+}
+
+model NotificationPreference {
+  id                String   @id @default(cuid())
+  userId            String   @unique
+  emailNewCheckin   Boolean  @default(true)
+  emailNewMessage   Boolean  @default(true)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

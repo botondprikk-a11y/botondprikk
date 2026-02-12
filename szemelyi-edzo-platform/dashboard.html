@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edzői Dashboard | Személyi Edző Platform</title>
+    <meta
+      name="description"
+      content="Edzői dashboard online és offline vendégek kezeléséhez."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="app-body">
+    <div class="bg-orb orb-one" aria-hidden="true"></div>
+    <div class="bg-orb orb-two" aria-hidden="true"></div>
+    <header class="app-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">E+</span>
+          <span class="brand-text">Energize</span>
+        </a>
+        <nav class="nav app-nav">
+          <a href="dashboard.html" class="active">Dashboard</a>
+          <a href="online.html">Online edzések</a>
+          <a href="offline.html">Offline edzések</a>
+          <a href="#">Riportok</a>
+        </nav>
+        <div class="app-actions">
+          <div class="mode-toggle">
+            <a class="btn primary btn-sm" href="online.html">Online</a>
+            <a class="btn ghost btn-sm" href="offline.html">Offline</a>
+          </div>
+          <div class="app-user">
+            <div class="user-chip">KM</div>
+            <div>
+              <strong>Kovács Mira</strong>
+              <span>Edzői fiók</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section class="app-section">
+        <div class="section-title">
+          <p class="eyebrow">Edzői dashboard</p>
+          <h2>Online és offline teljes kép, egy nézetben</h2>
+        </div>
+        <div class="dashboard-grid">
+          <article class="stat-card">
+            <p class="stat-label">Aktív online vendég</p>
+            <h3>18</h3>
+            <span>3 vár check-inre</span>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Aktív offline vendég</p>
+            <h3>9</h3>
+            <span>2 bérlet a végén</span>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Heti check-in arány</p>
+            <h3>83%</h3>
+            <span>15 / 18 leadva</span>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Napi logok</p>
+            <h3>12</h3>
+            <span>ma beérkezett</span>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Heti megtartott órák</p>
+            <h3>21</h3>
+            <span>2 lemondás</span>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Esedékes fizetések</p>
+            <h3>5</h3>
+            <span>következő 7 napban</span>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Havi bevétel</p>
+            <h3>1 240 000 Ft</h3>
+            <span>online 65% · offline 35%</span>
+          </article>
+          <article class="stat-card">
+            <p class="stat-label">Átlagos haladás</p>
+            <h3>76%</h3>
+            <span>utóbbi 4 hét</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="app-section">
+        <div class="section-title">
+          <p class="eyebrow">Napi fókusz</p>
+          <h2>Figyelmeztetések, trendek és vendégállapot</h2>
+        </div>
+        <div class="overview-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Teendők</h3>
+              <span class="panel-note">Prioritás sorrendben</span>
+            </div>
+            <div class="list">
+              <div class="list-item">
+                <div>
+                  <strong>3 vendég nem check-in-elt</strong>
+                  <span>Küldj emlékeztetőt hétvégére</span>
+                </div>
+                <span class="status-pill warning">sürgős</span>
+              </div>
+              <div class="list-item">
+                <div>
+                  <strong>2 bérlet a végén</strong>
+                  <span>Offline vendégek bérlet megújítás</span>
+                </div>
+                <span class="status-pill warning">esedékes</span>
+              </div>
+              <div class="list-item">
+                <div>
+                  <strong>1 fizetés késik</strong>
+                  <span>Online vendég · 4 napja esedékes</span>
+                </div>
+                <span class="status-pill warning">figyelmeztetés</span>
+              </div>
+              <div class="list-item">
+                <div>
+                  <strong>4 edzésterv frissítés</strong>
+                  <span>Új blokk a jövő hétre</span>
+                </div>
+                <span class="status-pill ok">tervezhető</span>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Heti teljesítmény</h3>
+              <span class="panel-note">Online aktivitás és jelenlét</span>
+            </div>
+            <div class="metric-stack">
+              <div>
+                <span class="stat-label">Check-in kész</span>
+                <strong>15 / 18</strong>
+              </div>
+              <div>
+                <span class="stat-label">Napi log átlag</span>
+                <strong>10.4 / nap</strong>
+              </div>
+              <div>
+                <span class="stat-label">Edzés teljesítés</span>
+                <strong>76%</strong>
+              </div>
+            </div>
+            <div class="bar-chart">
+              <span style="height: 30%"></span>
+              <span style="height: 45%"></span>
+              <span style="height: 55%"></span>
+              <span style="height: 60%"></span>
+              <span style="height: 68%"></span>
+              <span style="height: 72%"></span>
+              <span style="height: 66%"></span>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Vendégállapot</h3>
+              <span class="panel-note">Kockázat és megtartás</span>
+            </div>
+            <div class="status-grid">
+              <div class="status-box">
+                <strong>Stabil</strong>
+                <span>13 vendég</span>
+              </div>
+              <div class="status-box">
+                <strong>Figyelendő</strong>
+                <span>4 vendég</span>
+              </div>
+              <div class="status-box">
+                <strong>Lemorzsolódás</strong>
+                <span>1 vendég</span>
+              </div>
+              <div class="status-box">
+                <strong>Új</strong>
+                <span>3 vendég</span>
+              </div>
+            </div>
+            <div class="progress-stack">
+              <div>
+                <span>Online / Offline arány</span>
+                <div class="progress">
+                  <span style="width: 67%"></span>
+                </div>
+              </div>
+              <div>
+                <span>Megújítási arány</span>
+                <div class="progress">
+                  <span style="width: 78%"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </body>
+</html>

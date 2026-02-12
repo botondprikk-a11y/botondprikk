@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bejelentkezés | Személyi Edző Platform</title>
+    <meta
+      name="description"
+      content="Edzői bejelentkezés a személyi edző platformra."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="auth-body">
+    <div class="bg-orb orb-one" aria-hidden="true"></div>
+    <div class="bg-orb orb-two" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">E+</span>
+          <span class="brand-text">Energize</span>
+        </a>
+        <a class="btn ghost" href="index.html">Vissza a landingre</a>
+      </div>
+    </header>
+
+    <main class="auth-main">
+      <div class="container auth-grid">
+        <div class="auth-copy">
+          <p class="eyebrow">Bejelentkezés</p>
+          <h1>Edzői dashboard</h1>
+          <p class="lead">
+            A bejelentkezés után csak a saját, meghívott vendégeid adataihoz férsz
+            hozzá. Az érzékeny információk elkülönítve, biztonságban vannak.
+          </p>
+          <div class="auth-points">
+            <div>
+              <strong>Online vendégek</strong>
+              <span>check-in, log, haladás</span>
+            </div>
+            <div>
+              <strong>Offline vendégek</strong>
+              <span>manuális bérlet és alkalom</span>
+            </div>
+            <div>
+              <strong>Átlátható admin</strong>
+              <span>fizetés esedékesség, összkép</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="cta-form auth-form" action="dashboard.html" method="get">
+          <label>
+            Email
+            <input type="email" placeholder="email@pelda.hu" />
+          </label>
+          <label>
+            Jelszó
+            <input type="password" placeholder="••••••••" />
+          </label>
+          <button class="btn primary" type="submit">Belépés</button>
+          <p class="form-note">
+            Demo bejelentkezés: a Belépés a dashboardra visz.
+          </p>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

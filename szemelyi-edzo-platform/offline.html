@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Offline edzések | Edzői dashboard</title>
+    <meta
+      name="description"
+      content="Offline vendégek, bérletek és alkalmak kezelése."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="app-body">
+    <div class="bg-orb orb-one" aria-hidden="true"></div>
+    <div class="bg-orb orb-two" aria-hidden="true"></div>
+    <header class="app-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">E+</span>
+          <span class="brand-text">Energize</span>
+        </a>
+        <nav class="nav app-nav">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="online.html">Online edzések</a>
+          <a href="offline.html" class="active">Offline edzések</a>
+          <a href="#">Riportok</a>
+        </nav>
+        <div class="app-actions">
+          <a class="btn ghost btn-sm" href="online.html">Online</a>
+          <div class="app-user">
+            <div class="user-chip">KM</div>
+            <div>
+              <strong>Kovács Mira</strong>
+              <span>Edzői fiók</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section class="app-section">
+        <div class="section-title">
+          <p class="eyebrow">Offline edzések</p>
+          <h2>Manuális vendégek, bérletek és alkalmak</h2>
+        </div>
+        <div class="notice-card">
+          <p>
+            Az offline modulban manuálisan rögzíthetők a vendégek, a bérletek
+            alkalomszáma és az ár. Az adatok csak az adott edzőhöz tartoznak.
+          </p>
+        </div>
+        <div class="tab-nav">
+          <a class="tab-link active" href="#vendeg">Vendégek</a>
+          <a class="tab-link" href="#berletek">Bérletek</a>
+          <a class="tab-link" href="#alkalmak">Alkalmak</a>
+        </div>
+      </section>
+
+      <section class="app-section" id="vendeg">
+        <div class="section-title">
+          <p class="eyebrow">Vendégek</p>
+          <h2>Offline vendéglista</h2>
+        </div>
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Manuális vendégek</h3>
+            <button class="btn ghost btn-sm" type="button">Új vendég</button>
+          </div>
+          <div class="list">
+            <div class="list-item">
+              <div>
+                <strong>Tóth Erika</strong>
+                <span>Utolsó edzés: hétfő</span>
+              </div>
+              <span class="status-pill ok">aktív</span>
+            </div>
+            <div class="list-item">
+              <div>
+                <strong>Fazekas Milán</strong>
+                <span>Utolsó edzés: kedd</span>
+              </div>
+              <span class="status-pill warning">esedékes</span>
+            </div>
+            <div class="list-item">
+              <div>
+                <strong>Kiss Lili</strong>
+                <span>Utolsó edzés: péntek</span>
+              </div>
+              <span class="status-pill ok">aktív</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-section" id="berletek">
+        <div class="section-title">
+          <p class="eyebrow">Bérletek</p>
+          <h2>Alkalomszám és ár rögzítés</h2>
+        </div>
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Bérlet összesítő</h3>
+            <button class="btn ghost btn-sm" type="button">Új bérlet</button>
+          </div>
+          <div class="list">
+            <div class="list-item">
+              <div>
+                <strong>10 alkalom · 60 000 Ft</strong>
+                <span>Tóth Erika · maradt: 4 alkalom</span>
+              </div>
+              <span class="status-pill ok">rendben</span>
+            </div>
+            <div class="list-item">
+              <div>
+                <strong>8 alkalom · 52 000 Ft</strong>
+                <span>Fazekas Milán · maradt: 1 alkalom</span>
+              </div>
+              <span class="status-pill warning">új bérlet kell</span>
+            </div>
+            <div class="list-item">
+              <div>
+                <strong>12 alkalom · 78 000 Ft</strong>
+                <span>Kiss Lili · maradt: 7 alkalom</span>
+              </div>
+              <span class="status-pill ok">rendben</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-section" id="alkalmak">
+        <div class="section-title">
+          <p class="eyebrow">Alkalmak</p>
+          <h2>Megjelenések és lemondások</h2>
+        </div>
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Utolsó alkalmak</h3>
+            <span class="panel-note">Manuális rögzítés</span>
+          </div>
+          <div class="table table-wide">
+            <div class="table-row header">
+              <div class="table-cell">Vendég</div>
+              <div class="table-cell">Dátum</div>
+              <div class="table-cell">Státusz</div>
+              <div class="table-cell">Megjegyzés</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">Tóth Erika</div>
+              <div class="table-cell">Hétfő</div>
+              <div class="table-cell ok">Megjelent</div>
+              <div class="table-cell">Felsőtest</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">Fazekas Milán</div>
+              <div class="table-cell">Kedd</div>
+              <div class="table-cell warning">Lemondta</div>
+              <div class="table-cell">Új időpont kell</div>
+            </div>
+            <div class="table-row">
+              <div class="table-cell">Kiss Lili</div>
+              <div class="table-cell">Péntek</div>
+              <div class="table-cell ok">Megjelent</div>
+              <div class="table-cell">Kardió</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

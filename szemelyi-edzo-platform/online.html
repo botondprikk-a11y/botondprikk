@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Online edzések | Edzői dashboard</title>
+    <meta
+      name="description"
+      content="Online vendégek kezelése, check-in és edzéstervek egy edzői felületen."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="app-body">
+    <div class="bg-orb orb-one" aria-hidden="true"></div>
+    <div class="bg-orb orb-two" aria-hidden="true"></div>
+    <header class="app-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">E+</span>
+          <span class="brand-text">Energize</span>
+        </a>
+        <nav class="nav app-nav">
+          <a href="dashboard.html">Dashboard</a>
+          <a href="online.html" class="active">Online edzések</a>
+          <a href="offline.html">Offline edzések</a>
+          <a href="#">Riportok</a>
+        </nav>
+        <div class="app-actions">
+          <a class="btn ghost btn-sm" href="offline.html">Offline</a>
+          <div class="app-user">
+            <div class="user-chip">KM</div>
+            <div>
+              <strong>Kovács Mira</strong>
+              <span>Edzői fiók</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section class="app-section">
+        <div class="section-title">
+          <p class="eyebrow">Online edzések</p>
+          <h2>Vendégek, check-in és edzéstervek egy külön modulban</h2>
+        </div>
+        <div class="notice-card">
+          <p>
+            Csak a saját, meghívott vendégeid adatai láthatók. Az online modulban a
+            napi logok, a heti check-in és az edzéstervek követhetők.
+          </p>
+        </div>
+        <div class="tab-nav">
+          <a class="tab-link active" href="#vendeg">Vendégek</a>
+          <a class="tab-link" href="#edzestervek">Edzéstervek</a>
+          <a class="tab-link" href="#checkin">Check-in</a>
+          <a class="tab-link" href="#napi-log">Napi log</a>
+        </div>
+      </section>
+
+      <section class="app-section" id="vendeg">
+        <div class="section-title">
+          <p class="eyebrow">Vendégek</p>
+          <h2>Összes online vendég, státusz és fizetés</h2>
+        </div>
+        <div class="online-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Vendéglista</h3>
+              <span class="panel-note">Check-in és fizetés státusz</span>
+            </div>
+            <div class="table table-wide">
+              <div class="table-row header">
+                <div class="table-cell">Vendég</div>
+                <div class="table-cell">Check-in</div>
+                <div class="table-cell">Fizetés</div>
+                <div class="table-cell">Művelet</div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Nagy Dóra</div>
+                <div class="table-cell warning">Nincs leadva</div>
+                <div class="table-cell">Ma esedékes</div>
+                <div class="table-cell"><a class="link" href="vendeg.html">Megnyitás</a></div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Varga Márton</div>
+                <div class="table-cell ok">Leadva</div>
+                <div class="table-cell">3 nap múlva</div>
+                <div class="table-cell"><a class="link" href="vendeg.html">Megnyitás</a></div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Horváth Lilla</div>
+                <div class="table-cell ok">Leadva</div>
+                <div class="table-cell">Holnap</div>
+                <div class="table-cell"><a class="link" href="vendeg.html">Megnyitás</a></div>
+              </div>
+              <div class="table-row">
+                <div class="table-cell">Sipos Gergő</div>
+                <div class="table-cell ok">Leadva</div>
+                <div class="table-cell">10 nap múlva</div>
+                <div class="table-cell"><a class="link" href="vendeg.html">Megnyitás</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Vendég részletek</h3>
+              <span class="panel-note">Edzésterv, kalória, testsúly, haladás</span>
+            </div>
+            <div class="guest-cards">
+              <article class="guest-card">
+                <div class="guest-top">
+                  <div>
+                    <h4>Nagy Dóra</h4>
+                    <p class="muted">Cél: -4 kg, tónus</p>
+                  </div>
+                  <span class="status-pill warning">check-in hiányzik</span>
+                </div>
+                <div class="guest-metrics">
+                  <div class="metric">
+                    <span>Edzésterv</span>
+                    <strong>Erő + core</strong>
+                  </div>
+                  <div class="metric">
+                    <span>Napi kalória</span>
+                    <strong>1 850 kcal</strong>
+                  </div>
+                  <div class="metric">
+                    <span>Testsúly</span>
+                    <strong>71.2 kg</strong>
+                  </div>
+                  <div class="metric">
+                    <span>Lépések</span>
+                    <strong>8 400</strong>
+                  </div>
+                </div>
+                <div class="sparkline">
+                  <span style="height: 30%"></span>
+                  <span style="height: 38%"></span>
+                  <span style="height: 42%"></span>
+                  <span style="height: 46%"></span>
+                  <span style="height: 52%"></span>
+                  <span style="height: 55%"></span>
+                  <span style="height: 60%"></span>
+                  <span style="height: 64%"></span>
+                  <span style="height: 66%"></span>
+                  <span style="height: 70%"></span>
+                </div>
+                <div class="progress">
+                  <span style="width: 45%"></span>
+                </div>
+              </article>
+              <article class="guest-card">
+                <div class="guest-top">
+                  <div>
+                    <h4>Varga Márton</h4>
+                    <p class="muted">Cél: tömegnövelés</p>
+                  </div>
+                  <span class="status-pill ok">check-in kész</span>
+                </div>
+                <div class="guest-metrics">
+                  <div class="metric">
+                    <span>Edzésterv</span>
+                    <strong>Push / Pull / Legs</strong>
+                  </div>
+                  <div class="metric">
+                    <span>Napi kalória</span>
+                    <strong>2 600 kcal</strong>
+                  </div>
+                  <div class="metric">
+                    <span>Testsúly</span>
+                    <strong>82.4 kg</strong>
+                  </div>
+                  <div class="metric">
+                    <span>Lépések</span>
+                    <strong>7 200</strong>
+                  </div>
+                </div>
+                <div class="sparkline alt">
+                  <span style="height: 32%"></span>
+                  <span style="height: 40%"></span>
+                  <span style="height: 48%"></span>
+                  <span style="height: 55%"></span>
+                  <span style="height: 60%"></span>
+                  <span style="height: 66%"></span>
+                  <span style="height: 72%"></span>
+                  <span style="height: 78%"></span>
+                  <span style="height: 84%"></span>
+                  <span style="height: 88%"></span>
+                </div>
+                <div class="progress">
+                  <span style="width: 68%"></span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-section" id="edzestervek">
+        <div class="section-title">
+          <p class="eyebrow">Edzéstervek</p>
+          <h2>Edzésterv létrehozó, sablonokkal és másolással</h2>
+        </div>
+        <div class="builder-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Sablonok</h3>
+              <button class="btn ghost btn-sm" type="button">Új sablon</button>
+            </div>
+            <div class="template-list">
+              <article class="template-card">
+                <div>
+                  <strong>Erő + core alap</strong>
+                  <span>4 napos · kezdő</span>
+                </div>
+                <button class="btn ghost btn-sm" type="button">Másolás</button>
+              </article>
+              <article class="template-card">
+                <div>
+                  <strong>Push / Pull / Legs</strong>
+                  <span>6 napos · haladó</span>
+                </div>
+                <button class="btn ghost btn-sm" type="button">Másolás</button>
+              </article>
+              <article class="template-card">
+                <div>
+                  <strong>Állóképesség 360</strong>
+                  <span>5 napos · HIIT</span>
+                </div>
+                <button class="btn ghost btn-sm" type="button">Másolás</button>
+              </article>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Terv szerkesztő</h3>
+              <div class="panel-actions">
+                <button class="btn ghost btn-sm" type="button">Duplikálás</button>
+                <button class="btn primary btn-sm" type="button">Mentés</button>
+              </div>
+            </div>
+            <div class="plan-grid">
+              <div class="plan-day">
+                <h4>Hétfő</h4>
+                <div class="exercise-item">
+                  <span>Guggolás</span>
+                  <strong>4x8</strong>
+                </div>
+                <div class="exercise-item">
+                  <span>Fekvenyomás</span>
+                  <strong>4x8</strong>
+                </div>
+                <button class="btn ghost btn-sm" type="button">Gyakorlat hozzáadás</button>
+              </div>
+              <div class="plan-day">
+                <h4>Szerda</h4>
+                <div class="exercise-item">
+                  <span>Húzódzkodás</span>
+                  <strong>4x6</strong>
+                </div>
+                <div class="exercise-item">
+                  <span>Felhúzás</span>
+                  <strong>4x6</strong>
+                </div>
+                <button class="btn ghost btn-sm" type="button">Gyakorlat hozzáadás</button>
+              </div>
+              <div class="plan-day">
+                <h4>Péntek</h4>
+                <div class="exercise-item">
+                  <span>Kitörés</span>
+                  <strong>3x12</strong>
+                </div>
+                <div class="exercise-item">
+                  <span>Vállból nyomás</span>
+                  <strong>3x10</strong>
+                </div>
+                <button class="btn ghost btn-sm" type="button">Gyakorlat hozzáadás</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-section" id="checkin">
+        <div class="section-title">
+          <p class="eyebrow">Check-in</p>
+          <h2>Heti check-in mindig hétvégén</h2>
+        </div>
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Check-in sor</h3>
+            <span class="panel-note">Szombat-vasárnap aktív</span>
+          </div>
+          <div class="list">
+            <div class="list-item">
+              <div>
+                <strong>Nagy Dóra</strong>
+                <span>Hiányzik a heti check-in</span>
+              </div>
+              <span class="status-pill warning">pótlás kell</span>
+            </div>
+            <div class="list-item">
+              <div>
+                <strong>Varga Márton</strong>
+                <span>Check-in leadva</span>
+              </div>
+              <span class="status-pill ok">kész</span>
+            </div>
+            <div class="list-item">
+              <div>
+                <strong>Horváth Lilla</strong>
+                <span>Check-in leadva</span>
+              </div>
+              <span class="status-pill ok">kész</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-section" id="napi-log">
+        <div class="section-title">
+          <p class="eyebrow">Napi log</p>
+          <h2>Kalória, makrók, lépések és testsúly</h2>
+        </div>
+        <div class="log-grid">
+          <article class="log-card">
+            <h3>Napi kalória és makrók</h3>
+            <div class="macro-grid">
+              <div>
+                <span>Kalória</span>
+                <strong>1 850 kcal</strong>
+              </div>
+              <div>
+                <span>Fehérje</span>
+                <strong>145 g</strong>
+              </div>
+              <div>
+                <span>Szénhidrát</span>
+                <strong>190 g</strong>
+              </div>
+              <div>
+                <span>Zsír</span>
+                <strong>60 g</strong>
+              </div>
+            </div>
+          </article>
+          <article class="log-card">
+            <h3>Napi aktivitás</h3>
+            <div class="macro-grid">
+              <div>
+                <span>Lépések</span>
+                <strong>8 400</strong>
+              </div>
+              <div>
+                <span>Aktív nap</span>
+                <strong>Igen</strong>
+              </div>
+              <div>
+                <span>Edzés log</span>
+                <strong>Beírva</strong>
+              </div>
+              <div>
+                <span>Testsúly</span>
+                <strong>71.2 kg</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

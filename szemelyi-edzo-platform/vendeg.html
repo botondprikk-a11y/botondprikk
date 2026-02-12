@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vendégportál | Személyi Edző Platform</title>
+    <meta
+      name="description"
+      content="Vendégportál napi loggal, makrókkal, lépéssel és heti check-innel."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="app-body">
+    <div class="bg-orb orb-one" aria-hidden="true"></div>
+    <div class="bg-orb orb-two" aria-hidden="true"></div>
+    <header class="app-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">E+</span>
+          <span class="brand-text">Energize</span>
+        </a>
+        <div class="guest-header">
+          <div>
+            <strong>Vendégportál</strong>
+            <span>Nagy Dóra · Online edzés</span>
+          </div>
+          <a class="btn ghost btn-sm" href="online.html">Vissza az edzőhöz</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section class="app-section">
+        <div class="section-title">
+          <p class="eyebrow">Heti összkép</p>
+          <h2>Edzésterv és haladás</h2>
+        </div>
+        <div class="guest-summary">
+          <div class="summary-card">
+            <h3>Aktuális edzésterv</h3>
+            <p>Erő + core · 3 edzés / hét</p>
+            <div class="progress">
+              <span style="width: 60%"></span>
+            </div>
+            <span class="muted">A heti terv 60%-a kész</span>
+          </div>
+          <div class="summary-card">
+            <h3>Következő check-in</h3>
+            <p>Hétvége · Szombat-vasárnap</p>
+            <span class="status-pill warning">hétvégén kitöltendő</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="app-section">
+        <div class="section-title">
+          <p class="eyebrow">Napi log</p>
+          <h2>Kalória, makrók, lépések és testsúly</h2>
+        </div>
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Napi beírás</h3>
+            <span class="panel-note">Külső appból is beírható</span>
+          </div>
+          <form class="log-form">
+            <div class="form-grid">
+              <label>
+                Napi kalória
+                <input type="text" placeholder="Pl. 1850 kcal" />
+              </label>
+              <label>
+                Fehérje (g)
+                <input type="text" placeholder="Pl. 145 g" />
+              </label>
+              <label>
+                Szénhidrát (g)
+                <input type="text" placeholder="Pl. 190 g" />
+              </label>
+              <label>
+                Zsír (g)
+                <input type="text" placeholder="Pl. 60 g" />
+              </label>
+              <label>
+                Lépések
+                <input type="text" placeholder="Pl. 8400" />
+              </label>
+              <label>
+                Testsúly (kg)
+                <input type="text" placeholder="Pl. 71.2" />
+              </label>
+            </div>
+            <button class="btn primary" type="submit">Napi log mentése</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="app-section">
+        <div class="section-title">
+          <p class="eyebrow">Heti check-in</p>
+          <h2>Hétvégén kitöltendő visszajelzés</h2>
+        </div>
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Check-in kérdések</h3>
+            <span class="panel-note">Szombat-vasárnap aktív</span>
+          </div>
+          <form class="checkin-form">
+            <label>
+              Hogy érezted magad a héten?
+              <input type="text" placeholder="Rövid összefoglaló" />
+            </label>
+            <label>
+              Mi volt a legnagyobb kihívás?
+              <input type="text" placeholder="Pl. időhiány, stressz" />
+            </label>
+            <label>
+              Heti célok teljesülése
+              <input type="text" placeholder="Pl. 4/5 edzés" />
+            </label>
+            <button class="btn ghost" type="submit">Check-in beküldése</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
