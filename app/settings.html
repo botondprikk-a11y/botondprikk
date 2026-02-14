@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Beállítások | Energize</title>
+    <meta name="description" content="Edzői beállítások." />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body data-page="settings">
+    <div class="app-shell" id="appShell">
+      <aside class="sidebar" id="appSidebar"></aside>
+      <div class="app-main">
+        <header class="topbar" id="appTopbar"></header>
+        <main class="content">
+          <div class="page-title">
+            <div>
+              <p class="eyebrow">Beállítások</p>
+              <h1>Edzői profil</h1>
+            </div>
+          </div>
+
+          <div class="card pad">
+            <h3>Profil adatok</h3>
+            <div class="form-row">
+              <label>
+                Név
+                <input type="text" placeholder="Kovács Mira" />
+              </label>
+              <label>
+                Email
+                <input type="email" placeholder="mira@energize.hu" />
+              </label>
+            </div>
+            <button class="btn primary" type="button">Mentés</button>
+          </div>
+
+          <div class="card pad">
+            <h3>Preferenciák</h3>
+            <div class="form-row">
+              <label>
+                Mértékegység
+                <select>
+                  <option>Metrikus (kg, cm)</option>
+                  <option>Imperiális (lb, inch)</option>
+                </select>
+              </label>
+              <label>
+                Hét kezdete
+                <select>
+                  <option>Hétfő</option>
+                  <option>Vasárnap</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="card pad">
+              <h3>Integrációk</h3>
+              <p class="card-meta">Készül, hamarosan.</p>
+            </div>
+            <div class="card pad">
+              <h3>Értesítések</h3>
+              <p class="card-meta">Készül, hamarosan.</p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="mock-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

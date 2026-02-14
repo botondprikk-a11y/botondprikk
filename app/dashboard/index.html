@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard | Edzoi admin</title>
+  <meta name="description" content="Edzoi dashboard online es offline vendegekhez, check-inhez es berletekhez." />
+  <link rel="stylesheet" href="../../styles/base.css" />
+  <link rel="stylesheet" href="../../styles/layout.css" />
+  <link rel="stylesheet" href="../../styles/components.css" />
+  <link rel="stylesheet" href="../../styles/responsive.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="inner">
+        <div class="brand brand-lg">
+          <span class="mark" aria-hidden="true"></span>
+          <div class="brand-text">
+            <span class="brand-name">Energize</span>
+            <span class="brand-role">edzoi dashboard</span>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button class="btn">Meghivo link</button>
+          <div class="user-chip">
+            <span>KM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dash-shell">
+    <aside class="sidebar card pad">
+      <div class="side-title">Menu</div>
+      <nav class="side-nav">
+        <a class="active" href="#">Dashboard</a>
+        <a href="#">Vendegek</a>
+        <a href="#">Edzestervek</a>
+        <a href="#">Check-in</a>
+        <a href="#">Riportok</a>
+        <a href="#">Beallitasok</a>
+      </nav>
+      <div class="side-block">
+        <p class="side-label">Aktiv modul</p>
+        <div class="mode-toggle">
+          <button class="btn btn-primary btn-sm" type="button">Online</button>
+          <button class="btn btn-sm" type="button">Offline</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="dash-content">
+      <section class="dash-section">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow"><span class="dot" aria-hidden="true"></span> attekintes</span>
+            <h1>Edzoi dashboard</h1>
+            <p class="lead">Online es offline folyamataid, egy kepben.</p>
+          </div>
+          <div class="section-actions">
+            <button class="btn btn-primary">Uj offline vendeg</button>
+            <button class="btn">Edzes rogzitese</button>
+          </div>
+        </div>
+
+        <div id="kpiGrid" class="kpi-grid"></div>
+      </section>
+
+      <div class="content-grid">
+        <div class="main-col">
+          <section class="card pad">
+            <div class="panel-head">
+              <div>
+                <h2>Teendok</h2>
+                <p class="panel-sub">Check-in, fizetes es berlet kovetes</p>
+              </div>
+              <div class="tabs" role="tablist">
+                <button class="tab-btn active" data-tab="checkin" type="button">Check-in</button>
+                <button class="tab-btn" data-tab="payment" type="button">Fizetes</button>
+                <button class="tab-btn" data-tab="pass" type="button">Berlet</button>
+              </div>
+            </div>
+            <div id="todoList" class="todo-list"></div>
+          </section>
+
+          <section class="card pad">
+            <div class="panel-head">
+              <div>
+                <h2>Vendegek attekintese</h2>
+                <p class="panel-sub">8 soros mini tabla</p>
+              </div>
+              <button class="btn btn-sm" type="button">Teljes lista</button>
+            </div>
+            <div id="tableWrap" class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Nev</th>
+                    <th>Tipus</th>
+                    <th>Check-in</th>
+                    <th>Berlet maradt</th>
+                    <th>Utolso aktivitas</th>
+                    <th>Fizetes statusz</th>
+                  </tr>
+                </thead>
+                <tbody id="guestTable"></tbody>
+              </table>
+            </div>
+            <div id="emptyState" class="empty-state" hidden>
+              <div class="empty-card">
+                <h3>Nincs meg vendeg</h3>
+                <p>Adj hozza online vagy offline vendeget, hogy megjelenjenek az adatok.</p>
+                <button class="btn btn-primary" type="button">Uj vendeg</button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="side-col">
+          <section class="card pad">
+            <div class="panel-head">
+              <div>
+                <h2>Gyors akciok</h2>
+                <p class="panel-sub">Gyors muveletek egy helyen</p>
+              </div>
+            </div>
+            <div class="quick-actions">
+              <button class="btn btn-primary" type="button">Uj offline vendeg</button>
+              <button class="btn" type="button">Meghivo link</button>
+              <button class="btn" type="button">Edzes rogzitese</button>
+            </div>
+            <div class="side-note">
+              <p>A gombok demo funkciok, kesobb mukodnek.</p>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

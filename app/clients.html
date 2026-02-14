@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vendégek | Energize</title>
+    <meta name="description" content="Vendégek listája és szűrők." />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body data-page="clients">
+    <div class="app-shell" id="appShell">
+      <aside class="sidebar" id="appSidebar"></aside>
+      <div class="app-main">
+        <header class="topbar" id="appTopbar"></header>
+        <main class="content">
+          <div class="page-title">
+            <div>
+              <p class="eyebrow">Vendégek</p>
+              <h1>Aktív vendégek listája</h1>
+              <p class="card-meta">Keresés, szűrők és gyors áttekintés.</p>
+            </div>
+          </div>
+
+          <div class="card pad">
+            <div class="form-row">
+              <input id="clientSearch" class="search" type="search" placeholder="Keresés név szerint" />
+              <select id="filterType">
+                <option value="">Típus: mind</option>
+                <option value="Online">Online</option>
+                <option value="Offline">Offline</option>
+              </select>
+              <select id="filterStatus">
+                <option value="">Fizetés: mind</option>
+                <option value="Rendben">Rendben</option>
+                <option value="Esedékes">Esedékes</option>
+                <option value="Késés">Késés</option>
+              </select>
+              <select id="filterCheckin">
+                <option value="">Check-in: mind</option>
+                <option value="Kész">Kész</option>
+                <option value="Hiányzik">Hiányzik</option>
+              </select>
+              <select id="filterPass">
+                <option value="">Bérlet: mind</option>
+                <option value="low">1 vagy kevesebb</option>
+                <option value="expired">Lejárt</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card pad">
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Név</th>
+                    <th>Típus</th>
+                    <th>Check-in</th>
+                    <th>Bérlet</th>
+                    <th>Utolsó aktivitás</th>
+                    <th>Fizetés</th>
+                  </tr>
+                </thead>
+                <tbody id="clientsTable"></tbody>
+              </table>
+            </div>
+            <div id="clientsEmpty" class="empty-state" hidden>
+              <h3>Nincs találat</h3>
+              <p>Állítsd vissza a szűrőket, vagy adj hozzá új vendéget.</p>
+              <button class="btn primary" type="button">Új vendég</button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="mock-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

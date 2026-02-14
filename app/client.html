@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vendég részlet | Energize</title>
+    <meta name="description" content="Vendég részletek és logok." />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body data-page="client">
+    <div class="app-shell" id="appShell">
+      <aside class="sidebar" id="appSidebar"></aside>
+      <div class="app-main">
+        <header class="topbar" id="appTopbar"></header>
+        <main class="content">
+          <div class="page-title">
+            <div>
+              <p class="eyebrow">Vendég részlet</p>
+              <h1 id="clientName">Vendég neve</h1>
+              <p class="card-meta" id="clientMeta">Online vendég</p>
+            </div>
+            <a class="btn ghost" href="clients.html">Vissza a listára</a>
+          </div>
+
+          <div class="grid-2">
+            <div class="card pad">
+              <h3>Összefoglaló</h3>
+              <ul class="list">
+                <li><strong>Cél:</strong> <span id="clientGoal">Fogyás és forma</span></li>
+                <li><strong>Típus:</strong> <span id="clientType">Online</span></li>
+                <li><strong>Check-in:</strong> <span id="clientCheckin">Hiányzik</span></li>
+                <li><strong>Fizetés:</strong> <span id="clientPayment">Esedékes</span></li>
+              </ul>
+            </div>
+            <div class="card pad">
+              <h3>Offline bérlet</h3>
+              <ul class="list">
+                <li><strong>Összes alkalom:</strong> 10</li>
+                <li><strong>Maradék:</strong> <span id="clientSessions">1</span></li>
+                <li><strong>Ár:</strong> 60 000 Ft</li>
+                <li><strong>Utolsó edzés:</strong> <span id="clientLast">2024-02-10</span></li>
+              </ul>
+              <button class="btn primary" type="button">Alkalom levonása</button>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="card pad">
+              <h3>Online log</h3>
+              <p class="card-meta">Legutóbbi napi log</p>
+              <ul class="list">
+                <li><strong>Kalória:</strong> <span id="clientKcal">1850 kcal</span></li>
+                <li><strong>Makrók:</strong> <span id="clientMacros">P 145g · C 190g · F 60g</span></li>
+                <li><strong>Heti check-in:</strong> <span id="clientCheckinStatus">Hiányzik</span></li>
+              </ul>
+            </div>
+            <div class="card pad">
+              <h3>Testsúly trend</h3>
+              <p class="card-meta">Mock grafikon</p>
+              <div id="weightChart" class="chart"></div>
+            </div>
+          </div>
+
+          <div class="card pad">
+            <h3>Megjegyzések</h3>
+            <textarea rows="4" placeholder="Ide írhatsz rövid jegyzeteket..."></textarea>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="mock-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

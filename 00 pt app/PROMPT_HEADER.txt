@@ -1,0 +1,11 @@
+Projekt: magyar nyelvu, multi-tenant szemelyi edzo platform.
+
+Alapszabalyok:
+- Ne talalj ki extra funkciot. Tartsd magad a PROJECT_SPEC.md-hez.
+- Ne valtoztasd meg a mar letezo fajlszerkezetet indokolatlanul.
+- Stack: Next.js App Router + TypeScript + PostgreSQL + Prisma + Auth.
+- Multi-tenant: minden domain adat trainerId-hoz kotott; minden lekerdezes trainerId-ra szur.
+- Online kliens csak a sajat adatait latja; offline kliensnek nincs login.
+- Hozzaferes lejart allapotban csak "lejart" kepernyot mutatunk.
+- Ures allapot UI es hibakezeles mindig kell.
+- Prisma schema valtozasnal mindig adj migraciot.

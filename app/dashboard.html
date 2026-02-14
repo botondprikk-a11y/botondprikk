@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard | Energize</title>
+    <meta name="description" content="Edzői dashboard áttekintés." />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body data-page="dashboard">
+    <div class="app-shell" id="appShell">
+      <aside class="sidebar" id="appSidebar"></aside>
+      <div class="app-main">
+        <header class="topbar" id="appTopbar"></header>
+        <main class="content">
+          <div class="page-title">
+            <div>
+              <p class="eyebrow">Dashboard</p>
+              <h1>Áttekintés</h1>
+              <p class="card-meta">Online és offline vendégek egy képen.</p>
+            </div>
+          </div>
+
+          <div id="kpiGrid" class="kpi-grid"></div>
+
+          <div class="analytics-grid">
+            <div class="card pad">
+              <h3>Bevétel alakulása</h3>
+              <p class="card-meta">Havi összesítés, online + offline</p>
+              <div id="revenueChart" class="chart chart-bars"></div>
+              <div class="chart-legend">
+                <div>
+                  <span>Aktuális hónap</span>
+                  <strong id="revenueTotal">1 240 000 Ft</strong>
+                </div>
+                <span id="revenueTrend" class="trend-pill">+8% vs előző hónap</span>
+              </div>
+            </div>
+            <div class="card pad">
+              <h3>Megtartott órák</h3>
+              <p class="card-meta">Heti trend, megtartott vs lemondott</p>
+              <div id="hoursChart" class="chart chart-bars"></div>
+              <div class="chart-legend">
+                <div>
+                  <span>Hét összesen</span>
+                  <strong id="hoursTotal">24 óra</strong>
+                </div>
+                <span id="hoursTrend" class="trend-pill">+2 óra vs előző hét</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="layout-grid">
+            <div class="card pad">
+              <div class="calendar-head">
+                <div>
+                  <h3>Naptár – offline edzések</h3>
+                  <p id="calendarRange" class="card-meta">Hét 6 · 2024.02.05–02.11</p>
+                </div>
+                <div class="calendar-actions">
+                  <div class="view-toggle">
+                    <button class="btn ghost btn-sm active" data-view="week" type="button">Hét</button>
+                    <button class="btn ghost btn-sm" data-view="day" type="button">Nap</button>
+                  </div>
+                  <button class="btn primary btn-sm" id="addSessionBtn" type="button">Új offline edzés</button>
+                </div>
+              </div>
+              <div id="calendarGrid" class="calendar-grid"></div>
+            </div>
+            <div class="card pad">
+              <div class="page-title">
+                <div>
+                  <h2>Napi órák</h2>
+                  <p class="card-meta">Névre kattintva állapot választható.</p>
+                </div>
+                <button class="btn ghost btn-sm" id="addSessionBtnAlt" type="button">Új óra</button>
+              </div>
+              <div id="sessionList" class="session-list"></div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div id="sessionModal" class="modal" hidden>
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-card">
+        <div class="modal-head">
+          <h3>Új offline edzés</h3>
+          <button class="btn ghost btn-sm" type="button" data-close>Bezárás</button>
+        </div>
+        <div class="modal-body">
+          <label>
+            Vendég neve
+            <input type="text" placeholder="Pl. Tóth Erika" />
+          </label>
+          <div class="form-row">
+            <label>
+              Dátum
+              <input type="text" placeholder="2024-02-12" />
+            </label>
+            <label>
+              Időpont
+              <input type="text" placeholder="09:00" />
+            </label>
+          </div>
+          <label>
+            Státusz
+            <select>
+              <option>Megtartva</option>
+              <option>Lemondva</option>
+              <option>Lemondva 24 órán belül</option>
+              <option>No-show</option>
+            </select>
+          </label>
+          <button class="btn primary" type="button" data-save>Mentés</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="mock-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

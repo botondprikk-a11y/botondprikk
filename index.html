@@ -1,569 +1,331 @@
 <!doctype html>
 <html lang="hu">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Személyi edzés Szeged - Botond Prikk</title>
-  <meta name="description" content="Személyi, páros és online edzés Szegeden. Rendszer, technika, kalóriakeret, követés. Jelentkezés után 24 órán belül válaszolok." />
-  <link rel="canonical" href="https://botondprikk.vercel.app/" />
-
-  <meta property="og:title" content="Személyi edzés Szeged - Botond Prikk" />
-  <meta property="og:description" content="Személyi, páros és online edzés Szegeden. Rendszer, technika, kalóriakeret, követés. Jelentkezés után 24 órán belül válaszolok." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://botondprikk.vercel.app/" />
-  <meta property="og:image" content="https://botondprikk.vercel.app/og-image.svg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Személyi edzés Szeged - Botond Prikk" />
-  <meta name="twitter:description" content="Személyi, páros és online edzés Szegeden. Rendszer, technika, kalóriakeret, követés. Jelentkezés után 24 órán belül válaszolok." />
-  <meta name="twitter:image" content="https://botondprikk.vercel.app/og-image.svg" />
-
-  <!-- Offline-friendly: system font stack (no external requests) -->
-  <link rel="stylesheet" href="styles/base.css" />
-  <link rel="stylesheet" href="styles/layout.css" />
-  <link rel="stylesheet" href="styles/components.css" />
-  <link rel="stylesheet" href="styles/responsive.css" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Prikk Botond",
-    "url": "https://botondprikk.vercel.app/",
-    "areaServed": "Szeged",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Szeged",
-      "addressCountry": "HU"
-    },
-    "serviceType": [
-      "Személyi edzés",
-      "Páros edzés",
-      "Online coaching"
-    ],
-    "email": "botond.prikk@gmail.com",
-    "sameAs": [
-      "https://www.instagram.com/botondprikk/"
-    ]
-  }
-  </script>
-</head>
-
-<body>
-  <!-- TOPBAR -->
-  <div class="topbar">
-    <div class="container">
-      <div class="inner">
-        <div class="brand brand-lg" aria-label="Prikk Botond személyi edző">
-          <span class="mark" aria-hidden="true"></span>
-          <div class="brand-text">
-            <span class="brand-name">Prikk Botond</span>
-            <span class="brand-role">személyi edző</span>
-          </div>
-        </div>
-
-        <nav class="nav" aria-label="Oldal navigáció">
-          <a href="#rolam">Rólam</a>
-          <a href="#miert">Miért velem?</a>
-          <a href="#csomagok">Csomagok</a>
-          <a href="#gyik">GYIK</a>
-          <a href="#jelentkezes">Jelentkezés</a>
-          <a href="#helyszin">Helyszín</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Személyi Edző Platform | Edzői admin egy helyen</title>
+    <meta
+      name="description"
+      content="Személyi edzőknek készült platform online és offline ügyfélkezeléshez, bérletkövetéshez és bevétel-összesítéshez."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-one" aria-hidden="true"></div>
+    <div class="bg-orb orb-two" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#">
+          <span class="brand-mark">E+</span>
+          <span class="brand-text">Energize</span>
+        </a>
+        <nav class="nav" data-nav>
+          <a href="#platform">Platform</a>
+          <a href="#features">Funkciók</a>
+          <a href="#arak">Árak</a>
+          <a href="#regisztracio">Regisztráció</a>
         </nav>
-
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false">
+          Menü
+        </button>
+        <a class="btn primary" href="app/dashboard.html">Belépés</a>
       </div>
-    </div>
-  </div>
+    </header>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="container">
-      <div class="heroGrid">
-        <div class="card pad">
-          <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Személyi & online edzés • Szeged</span>
-          <h1>Fogyás és izomépítés rendszerben</h1>
-          <p class="lead lead-offset">
-            Fogyj le és építs izmot úgy, hogy végre értsd is, mit csinálsz.
-            Edzésrendszer, technika, kalóriakeret, követés. Nem találgatás, hanem haladás.
+    <main>
+      <section class="hero" id="platform">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Személyi edzőknek</p>
+            <h1>Végre egy helyen az edzői admin, online és offline.</h1>
+            <p class="lead">
+              Nem többé szétszórt Drive-táblák. Vendégkezelés, bérletkövetés,
+              lemondások és bevétel-összesítés egy átlátható rendszerben.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#regisztracio">Fiók létrehozása</a>
+              <a class="btn ghost" href="app/dashboard.html">Dashboard megtekintése</a>
+            </div>
+            <div class="hero-stats">
+              <div>
+                <strong>1</strong>
+                <span>edzői dashboard</span>
+              </div>
+              <div>
+                <strong>2</strong>
+                <span>üzemmód (online + offline)</span>
+              </div>
+              <div>
+                <strong>1 link</strong>
+                <span>vendég meghívás</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="card pad hero-card">
+              <p class="card-title">Mai áttekintés</p>
+              <h3>Edzések rögzítve</h3>
+              <p class="card-meta">4 megtartott · 1 lemondott</p>
+              <ul>
+                <li>3 vendég bérlete frissítve</li>
+                <li>2 új meghívó kiküldve</li>
+                <li>Bevétel-összesítés naprakész</li>
+              </ul>
+              <button class="btn ghost">Megnyitás</button>
+            </div>
+            <div class="hero-chip">Vendégportál · bérletkövetés · átlátható bevétel</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="problem">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Probléma</p>
+            <h2>Szétszórt admin, kevesebb fókusz az edzésre.</h2>
+          </div>
+          <div class="grid-3">
+            <article class="feature-card">
+              <h3>Drive-tábla káosz</h3>
+              <p>Ügyféladatok, bérletek és edzéstervek külön helyen.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Check-in chatben</h3>
+              <p>Nincs egységes visszajelzés, nehéz visszakeresni.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Offline követés kézzel</h3>
+              <p>Alkalmak, árak és jelenlét manuálisan követve.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="solution">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Megoldás</p>
+            <h2>Három pilléren nyugvó, átlátható edzői workflow.</h2>
+          </div>
+          <div class="grid-3">
+            <article class="program-card">
+              <h3>Dashboard</h3>
+              <p>Összes vendég, check-in, fizetés és napi log egy képen.</p>
+              <span class="badge-pill">Edzői nézet</span>
+            </article>
+            <article class="program-card">
+              <h3>Offline bérlet</h3>
+              <p>Manuális vendég, alkalomszám és ár beállítása.</p>
+              <span class="badge-pill">Hibrid opció</span>
+            </article>
+            <article class="program-card">
+              <h3>Online check-in és log</h3>
+              <p>Heti check-in és napi log rendezett formában.</p>
+              <span class="badge-pill">Vendégportál</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="steps">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Hogyan működik?</p>
+            <h2>Három egyszerű lépés az induláshoz.</h2>
+          </div>
+          <div class="grid-3">
+            <div class="feature-card">
+              <h3>1. Edzői fiók</h3>
+              <p>Létrehozod a fiókot és beállítod az alapokat.</p>
+            </div>
+            <div class="feature-card">
+              <h3>2. Vendég meghívás</h3>
+              <p>Linkkel meghívod az online vendégeket.</p>
+            </div>
+            <div class="feature-card">
+              <h3>3. Követés</h3>
+              <p>Heti check-in, napi log és offline alkalmak rögzítése.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Funkciók</p>
+            <h2>Edzői nézet és vendégportál elkülönítve.</h2>
+          </div>
+          <div class="split">
+            <div class="card pad">
+              <h3>Edzői nézet</h3>
+              <ul class="list">
+                <li>Összes vendég áttekintés és státuszok</li>
+                <li>Heti check-in hiányzik vagy kész</li>
+                <li>Offline bérletek alkalomszáma</li>
+                <li>Bevétel és fizetés esedékesség</li>
+              </ul>
+            </div>
+            <div class="card pad">
+              <h3>Vendégportál</h3>
+              <ul class="list">
+                <li>Napi kalória és makró log</li>
+                <li>Heti check-in kitöltés</li>
+                <li>Edzésterv megtekintése</li>
+                <li>Haladás követése grafikonon</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="arak">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Árak</p>
+            <h2>Edzői előfizetés, aktív vendég limit szerint.</h2>
+          </div>
+          <div class="grid-3">
+            <article class="price-card">
+              <h3>Start</h3>
+              <p class="price">19 900 Ft</p>
+              <span>/ hó · 10 aktív vendég</span>
+              <ul class="list">
+                <li>Online + offline ügyfelek</li>
+                <li>Alkalomkövetés</li>
+                <li>Alap riportok</li>
+              </ul>
+              <a class="btn ghost" href="#regisztracio">Kezdés</a>
+            </article>
+            <article class="price-card featured">
+              <div class="badge-pill">Legnépszerűbb</div>
+              <h3>Pro</h3>
+              <p class="price">34 900 Ft</p>
+              <span>/ hó · 15 aktív vendég</span>
+              <ul class="list">
+                <li>Bevétel-összesítő</li>
+                <li>Vendégportál</li>
+                <li>Prioritás támogatás</li>
+              </ul>
+              <a class="btn primary" href="#regisztracio">Kezdés</a>
+            </article>
+            <article class="price-card">
+              <h3>Team</h3>
+              <p class="price">49 900 Ft</p>
+              <span>/ hó · 25 aktív vendég</span>
+              <ul class="list">
+                <li>Edzői csapat kezelés</li>
+                <li>Haladó riportok</li>
+                <li>Bővített támogatás</li>
+              </ul>
+              <a class="btn ghost" href="#regisztracio">Kezdés</a>
+            </article>
+          </div>
+          <p class="card-meta" style="margin-top: 12px;">
+            A billing funkcionalitás fejlesztés alatt van.
           </p>
-
-          <div class="heroActions">
-            <a class="btn btn-primary" href="#jelentkezes">Jelentkezem edzésre</a>
-            <a class="btn" href="#csomagok">Csomagok</a>
-          </div>
-
-          <div class="accentLine" role="presentation"></div>
-
-          <p class="mini">
-            <b>Fókusz:</b> fogyás • izomtömeg-növelés • erőnövelés
-          </p>
         </div>
+      </section>
 
-        <aside class="card pad">
-          <div class="stack">
-            <div class="statGrid">
-              <div class="stat">
-                <div class="k">Helyszín</div>
-                <div class="v">Kathi Béla - THE LEGEND, Szeged</div>
-              </div>
-              <div class="stat">
-              <div class="k">Fókusz</div>
-              <div class="v">Fogyás, izomtömeg-növelés, erőnövelés</div>
-            </div>
-              <div class="stat">
-                <div class="k">Szint</div>
-                <div class="v">Kezdőtől haladóig</div>
-              </div>
-              <div class="stat">
-                <div class="k">Forma</div>
-                <div class="v">Személyi, páros, online</div>
-              </div>
-            </div>
-
-            <div class="accentLine" role="presentation"></div>
-
-            <div>
-              <div class="eyebrow"><span class="dot" aria-hidden="true"></span> Hogyan dolgozunk együtt?</div>
-              <ol class="steps" aria-label="Folyamat">
-                <li><b>Jelentkezés</b> a formon (1 perc).</li>
-                <li><b>Egyeztetés</b> telefonon vagy online, célok, előzmények, keretek.</li>
-                <li><b>Start</b>, személyre szabott terv és követhető rendszer.</li>
-              </ol>
-              <p class="mini mini-tight">
-                <b>Válaszidő:</b> 24 órán belül.<br>
-                <b>Férőhely:</b> korlátozott, ha komolyan gondolod, érdemes most lépni.
-              </p>
-            </div>
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">GYIK</p>
+            <h2>Gyakori kérdések</h2>
           </div>
-        </aside>
-      </div>
-    </div>
-  </header>
-
-  <main id="main">
-  <!-- RÖVID BEMUTATKOZÁS -->
-  <section id="rolam">
-    <div class="container">
-      <div class="card pad">
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Rólam</span>
-        <h2 class="section-title">Szia, Botond vagyok.</h2>
-        <p class="lead lead-max-80">
-          3 éve dolgozom hivatásszerűen személyi edzőként, 6 éve edzek rendszeresen. Az edzéseim fókusza az izomépítés és az erőnövelés,
-          főleg gépekkel és súlyzókkal. Szeretem a letisztult, követhető rendszereket: nálam nem az a cél, hogy pár napig tökéletes
-          legyél, hanem hogy legyen egy terv, amit tényleg tudsz tartani a hétköznapokban is. A fokozatosság, a helyes kivitelezés és a
-          fejlődés mérése alap, mert így lesz kiszámítható a haladás.
-        </p>
-        <div class="accentLine" role="presentation"></div>
-        <p class="lead lead-max-80 lead-sm">
-          A diéta részét is így kezelem. Én is végigcsináltam egy komolyabb fogyást: 3 hónap alatt 15 kg-t adtam le, és közben pont azt
-          tanultam meg, ami szerintem a legtöbb embernek hiányzik: nem tiltólisták kellenek, hanem egy jól belőtt kalória- és makrókeret,
-          amit meg tudsz érteni és önállóan is tudsz használni. Ha velem dolgozol, azt szeretném elérni, hogy ne csak “csináld”, hanem
-          tudd is, mi miért működik, és később is kézben tartsd.
-        </p>
-        <p class="lead lead-max-80 lead-sm">
-          Ha olyan edzést keresel, ami átgondolt, következetes és a való élethez van igazítva, jó helyen jársz.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- MIÉRT VELEM DOLGOZZ? -->
-  <section id="miert">
-    <div class="container">
-      <div class="card pad">
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Miért velem dolgozz?</span>
-        <h2 class="section-title">Tiszta terv, stabil haladás.</h2>
-
-        <ul class="bullets">
-          <li>
-            <span class="tick" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-            </span>
-            <div><b>Személyre szabott edzéstervezés</b><br><span class="bullet-sub">Cél, szint, időbeosztás alapján.</span></div>
-          </li>
-          <li>
-            <span class="tick" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-            </span>
-            <div><b>Fokozatos, biztonságos fejlődés</b><br><span class="bullet-sub">Terhelés lépésről lépésre.</span></div>
-          </li>
-          <li>
-            <span class="tick" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-            </span>
-            <div><b>Fogyás és izomtömeg-növelés</b><br><span class="bullet-sub">Edzés + életmód keretek.</span></div>
-          </li>
-          <li>
-            <span class="tick" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-            </span>
-            <div><b>Életmódváltás támogatása</b><br><span class="bullet-sub">Tartható rutin, nem végletek.</span></div>
-          </li>
-          <li>
-            <span class="tick" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-            </span>
-            <div><b>Helyes kivitelezés</b><br><span class="bullet-sub">Technika = eredmény + sérülésmegelőzés.</span></div>
-          </li>
-          <li>
-            <span class="tick" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-            </span>
-            <div><b>Hosszú távú szemlélet</b><br><span class="bullet-sub">Nem 2 hét, hanem új alapok.</span></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- CSOMAGOK -->
-  <section id="csomagok">
-    <div class="container">
-      <div class="card pad">
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Csomagok</span>
-        <h2 class="section-title">Válaszd ki, ami illik hozzád</h2>
-        <p class="lead lead-max-80">
-          Előfizetés jellegű csomagok, ár egyeztetés után. Mindháromnál ugyanaz a cél: rendszer, követhetőség és stabil haladás.
-        </p>
-
-        <div class="packageGrid" role="list">
-          <div class="package featured" role="listitem">
-            <div class="package-head">
-              <h3>Páros edzés</h3>
-              <span class="badge">Legnépszerűbb</span>
-            </div>
-            <p class="package-kicker"><b>Kinek ajánlom:</b> Ha ketten jönnétek, hasonló célokkal, és szeretnétek olcsóbban megoldani.</p>
-            <div class="package-block">
-              <div class="package-label">Mit tartalmaz</div>
-              <ul class="package-list">
-                <li>Ugyanaz a struktúra, mint a személyinél</li>
-                <li>Közös edzés, közös rendszer</li>
-                <li>Technika javítás és terhelés felügyelet</li>
-                <li>Akkor működik a legjobban, ha hasonló a cél és a szint</li>
-              </ul>
-            </div>
-            <div class="package-footer">
-              <p class="package-why"><b>Miért éri meg:</b> Jó ár-érték arány, és sokan motiváltabbak ketten.</p>
-              <a class="btn btn-primary" href="#jelentkezes" data-type="Páros edzés">Jelentkezem páros edzésre</a>
-            </div>
-          </div>
-
-          <div class="package standard" role="listitem">
-            <div class="package-head">
-              <h3>Személyi edzés</h3>
-              <span class="badge badge-standard">Standard</span>
-            </div>
-            <p class="package-kicker"><b>Kinek ajánlom:</b> Ha gyorsabb fejlődést akarsz, és fontos a technika, a terhelés és a következetesség.</p>
-            <div class="package-block">
-              <div class="package-label">Mit tartalmaz</div>
-              <ul class="package-list">
-                <li>Edzések felépítése izomépítésre és erőre</li>
-                <li>Gépek és súlyzók, a szintedhez igazítva</li>
-                <li>Pontos kivitelezés, terhelés szabályozás</li>
-                <li>Fejlődés követése, célok mentén</li>
-              </ul>
-            </div>
-            <div class="package-footer">
-              <p class="package-why"><b>Miért éri meg:</b> Minden edzés vezetve van, így könnyebb stabilan haladni.</p>
-              <a class="btn" href="#jelentkezes" data-type="Személyi edzés">Jelentkezem személyi edzésre</a>
-            </div>
-          </div>
-
-          <div class="package best" role="listitem">
-            <div class="package-head">
-              <h3>Online coaching</h3>
-              <span class="badge badge-best">Legjobb ár-érték</span>
-            </div>
-            <p class="package-kicker"><b>Kinek ajánlom:</b> Ha önállóan edzenél, de kell egy stabil rendszer, folyamatos kontroll és erős étrendi irány.</p>
-            <div class="package-block">
-              <div class="package-label">Mit tartalmaz</div>
-              <ul class="package-list">
-                <li>Személyre szabott edzésterv</li>
-                <li>Heti 1 hosszabb videóhívás, ahol mindent átbeszélünk</li>
-                <li>Edzésnapló elemzés és visszajelzés</li>
-                <li>Videós technika elemzés, javítási pontokkal</li>
-                <li>Heti check-in, haladás követése</li>
-                <li>Edzésterv frissítés, ha indokolt</li>
-                <li>Étrendi keret kalória és makrók alapján</li>
-                <li>Külön kérésre konkrét étrendet is készítek</li>
-                <li>Írásban tudsz kérdezni, és a leghamarabb válaszolok, amikor elérhető vagyok</li>
-              </ul>
-            </div>
-            <div class="package-footer">
-              <p class="package-why"><b>Miért éri meg:</b> Nem csak tervet kapsz, hanem rendszerben követjük a haladást, és közben megtanulod az étrendet is.</p>
-              <a class="btn" href="#jelentkezes" data-type="Online coaching">Jelentkezem online coachingra</a>
-            </div>
+          <div class="grid-2">
+            <details class="faq-card">
+              <summary>Van külön vendégportál?</summary>
+              <p>Igen, a vendég saját felületen viszi a napi logot és a heti check-int.</p>
+            </details>
+            <details class="faq-card">
+              <summary>Működik offline bérletekkel?</summary>
+              <p>Igen, manuálisan rögzíthető az alkalomszám és az ár.</p>
+            </details>
+            <details class="faq-card">
+              <summary>Hogyan történik a meghívás?</summary>
+              <p>Edzői linkkel meghívod a vendéged, ő saját fiókot kap.</p>
+            </details>
+            <details class="faq-card">
+              <summary>Van bevétel-összesítő?</summary>
+              <p>Az alap riportok elérhetők, a billing modul fejlesztés alatt.</p>
+            </details>
+            <details class="faq-card">
+              <summary>Hibrid vendégeket is tudok kezelni?</summary>
+              <p>Igen, az online és offline vendégek egy rendszerben kezelhetők.</p>
+            </details>
+            <details class="faq-card">
+              <summary>Hogyan skálázódik a vendégszám?</summary>
+              <p>Az előfizetés vendég limit szerint bővíthető.</p>
+            </details>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- VÉLEMÉNYEK -->
-  <section id="velemenyek">
-    <div class="container">
-      <div class="card pad">
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Vélemények</span>
-        <h2 class="section-title">Visszajelzések a közös munkáról</h2>
-        <p class="lead lead-max-80">
-          Rövid, valós élmények arról, milyen a közös munka. Fejlesztési módban minta vélemények, később cserélhetők.
-        </p>
-
-        <div class="resultSlider" data-results-slider aria-label="Vélemények lapozó">
-          <div class="resultLabel">Vélemények (lapozható)</div>
-          <div class="resultTrack" role="list">
-            <div class="resultCard is-active" role="listitem" data-slide>
-              <div class="resultMetric">Követhető rendszer</div>
-              <div class="resultMeta">Nóri K. - 10 hete dolgozunk együtt</div>
-              <p class="resultText">Nem éreztem azt, hogy szétesik az egész a hétköznapokban. Végre van egy terv, amit tényleg tudok tartani, és ettől jöttek az eredmények is.</p>
-            </div>
-            <div class="resultCard" role="listitem" data-slide>
-              <div class="resultMetric">Fogyás lemondások nélkül</div>
-              <div class="resultMeta">Gábor F. - 3 hónapja dolgozunk együtt</div>
-              <p class="resultText">A legjobb, hogy nem tiltólistákat kaptam, hanem keretet. Fogytam, közben nem volt állandó szenvedés, és nem estem vissza két hét után.</p>
-            </div>
-            <div class="resultCard" role="listitem" data-slide>
-              <div class="resultMetric">Szálkásítás okosan</div>
-              <div class="resultMeta">Zsófi T. - 8 hete dolgozunk együtt</div>
-              <p class="resultText">A szálkásítás nálam mindig káosz volt, most viszont értem, mit csinálok. Jobb a forma, és közben az edzések is mennek, nem érzem magam nullának.</p>
-            </div>
-            <div class="quoteCard" role="listitem" data-slide>
-              <div class="quoteHead">
-                <div class="quoteName">Tényleg megtanultam diétázni</div>
-                <span class="sampleTag">Minta vélemény</span>
-              </div>
-              <p class="quoteText">Előtte csak próbálkoztam. Most már tudom, hogyan számoljak, hogyan állítsam be a makrókat, és mit csináljak, ha megáll a fogyás.</p>
-              <div class="quoteMeta">Bence M. - 12 hete dolgozunk együtt</div>
-            </div>
-            <div class="quoteCard" role="listitem" data-slide>
-              <div class="quoteHead">
-                <div class="quoteName">Izomtömeg és erő is jött</div>
-                <span class="sampleTag">Minta vélemény</span>
-              </div>
-              <p class="quoteText">Nem csak vékonyabb lettem, hanem formásabb is. Erősebb vagyok, javult a technikám, és végre látom, hogy haladok.</p>
-              <div class="quoteMeta">Petra S. - 4 hónapja dolgozunk együtt</div>
-            </div>
-            <div class="quoteCard" role="listitem" data-slide>
-              <div class="quoteHead">
-                <div class="quoteName">Motiváció helyett rendszer</div>
-                <span class="sampleTag">Minta vélemény</span>
-              </div>
-              <p class="quoteText">Nálam mindig a motiváció volt a gond. Itt viszont olyan rutint raktunk össze, ami akkor is működik, ha nincs kedvem. Ettől lett stabil az egész.</p>
-              <div class="quoteMeta">Dávid H. - 6 hete dolgozunk együtt</div>
-            </div>
-          </div>
-          <div class="resultNav" aria-label="Vélemények lapozása">
-            <button class="btn resultBtn" type="button" data-prev>Előző</button>
-            <div class="resultDots" role="tablist" aria-label="Vélemények oldalak">
-              <button class="resultDot is-active" type="button" data-dot aria-pressed="true">1</button>
-              <button class="resultDot" type="button" data-dot aria-pressed="false">2</button>
-              <button class="resultDot" type="button" data-dot aria-pressed="false">3</button>
-              <button class="resultDot" type="button" data-dot aria-pressed="false">4</button>
-              <button class="resultDot" type="button" data-dot aria-pressed="false">5</button>
-              <button class="resultDot" type="button" data-dot aria-pressed="false">6</button>
-            </div>
-            <button class="btn resultBtn" type="button" data-next>Következő</button>
-          </div>
-          <p class="mini mini-tight">Az eredmények egyénfüggők, a kiindulópont és a következetesség számít.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GYIK / BIZALOM -->
-  <section id="gyik">
-    <div class="container">
-      <div class="card pad">
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Gyakori kérdések</span>
-        <h2 class="section-title">Ami általában fel szokott merülni</h2>
-
-        <details class="faq">
-          <summary>Kezdőként is jöhetek?</summary>
-          <p>Igen. Kezdőknél különösen fontos, hogy helyesen építsük fel az alapokat: kivitelezés, fokozatos terhelés, tartható rutin.</p>
-        </details>
-
-        <details class="faq">
-          <summary>Hányszor érdemes edzeni egy héten?</summary>
-          <p>A minimum, ami már szépen működik, általában heti 2. A 3 nagyon jó, 4 a legjobb, a célodtól és a napirendedtől függően.</p>
-        </details>
-
-        <details class="faq">
-          <summary>Hogy működik az online coaching?</summary>
-          <p>Heti 1 hosszabb videóhívás, mellette edzésnapló, elemzés, videós technika javítás és heti check-in. Írásban kérdezhetsz, és a leghamarabb válaszolok, amikor elérhető vagyok.</p>
-        </details>
-
-        <details class="faq">
-          <summary>Írsz étrendet?</summary>
-          <p>Alapból kalória és makró keretet adok, és megtanítom, hogyan diétázz hatékonyan. Külön kérésre konkrét étrendet is készítek.</p>
-        </details>
-
-        <details class="faq">
-          <summary>Mikor látszik eredmény?</summary>
-          <p>A legnagyobb különbség általában 4-8 hét után érződik, ha tartod a rendszert.</p>
-        </details>
-
-        <details class="faq">
-          <summary>Mi van, ha azt érzem, nekem nehezebb?</summary>
-          <p>Ez teljesen rendben van. A lényeg nem az, hogy máshoz képest hol tartasz, hanem hogy a saját kiindulópontodhoz képest haladj. Reális tervvel és következetességgel mindenkinél jön a fejlődés.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- JELENTKEZÉSI SZEKCIÓ -->
-  <section id="jelentkezes">
-    <div class="container">
-      <div class="card pad">
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Jelentkezés</span>
-        <h2 class="section-title">Jelentkezz, és induljunk el</h2>
-        <p class="lead lead-max-80">
-          Töltsd ki a formot, és 24 órán belül hívlak. Röviden egyeztetünk telefonon vagy online,
-          és megnézzük, melyik együttműködés illik hozzád.
-        </p>
-
-        <div class="accentLine" role="presentation"></div>
-
-        <form id="leadForm" method="POST" action="https://formspree.io/f/mwvopnde">
-          <!--
-            VERCEL + EMAIL (legegyszerűbb): Formspree
-            1) Hozz létre egy formot Formspree-n (Vercel integráció is van)
-            2) Cseréld a fenti action URL-ben a FORM_ID-t a sajátodra (pl. https://formspree.io/f/xyzabcde)
-            3) (Opcionális) Átirányítás siker után: írd át az _redirect értékét a saját domain-edre.
-          -->
-          <input type="hidden" name="_subject" value="Új edzés jelentkezés" />
-          <input type="hidden" name="_redirect" value="" />
-          <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
-          <div class="grid2">
-            <div class="field">
-              <label for="name">Név *</label>
-              <input id="name" name="name" type="text" autocomplete="name" required placeholder="Pl. Kovács Anna" />
-            </div>
-            <div class="field">
-              <label for="phone">Telefonszám *</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+36..." />
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="email">Email cím *</label>
-            <input id="email" name="email" type="email" autocomplete="email" required placeholder="anna@email.com" />
-          </div>
-
-          <div class="grid2">
-            <div class="field">
-              <label for="type">Edzés típusa</label>
-              <select id="type" name="type">
-                <option value="Páros edzés">Páros edzés</option>
-                <option value="Személyi edzés">Személyi edzés</option>
-                <option value="Online coaching">Online coaching</option>
-                <option value="Még nem tudom">Még nem tudom</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="goal">Fő cél</label>
-              <select id="goal" name="goal">
-                <option value="Fogyás / életmódváltás">Fogyás / életmódváltás</option>
-                <option value="Izomtömeg-növelés">Izomtömeg-növelés</option>
-                <option value="Erőnövelés">Erőnövelés</option>
-                <option value="Általános fittség">Általános fittség</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="message">Üzenet (opcionális)</label>
-            <textarea id="message" name="message" rows="4" placeholder="Pl. cél, időbeosztás, kérdések, esetleges sérülés"></textarea>
-          </div>
-
-          <button class="btn btn-primary" type="submit" aria-label="Jelentkezem">Jelentkezem</button>
-
-          <div class="hint">
-            Az űrlap elküldésével hozzájárulsz, hogy a megadott adatok alapján felvegyem veled a kapcsolatot.
-            Az adataidat kizárólag egyeztetés céljára használom, harmadik félnek nem adom át.
-          </div>
-
-          <div class="success" id="successBox" role="status" aria-live="polite"></div>
-          <div class="error" id="errorBox" role="alert">
-            Kérlek, add meg a neved, érvényes email címed és telefonszámod.
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- HELYSZÍN -->
-  <section id="helyszin">
-    <div class="container">
-      <div class="card pad">
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Helyszín</span>
-        <div class="locationRow">
-          <div class="locationText">
-            <h2 class="section-title m-0">Kathi Béla - THE LEGEND</h2>
-            <p class="lead m-0">
-              <b>Szeged</b><br>
-              Etelka sor 1-A épület, 6723
+      <section class="section cta" id="regisztracio">
+        <div class="container cta-grid">
+          <div>
+            <p class="eyebrow">Regisztráció</p>
+            <h2>Hozz létre edzői fiókot és kezdd el a rendszerezést.</h2>
+            <p class="lead">
+              Add meg az alap adatokat, és indítsd el az online és offline vendégeidet.
             </p>
           </div>
-          <div class="locationAction">
-            <a class="btn btn-primary" href="https://www.google.com/maps?q=Szeged%2C%20Etelka%20sor%201-A%20%C3%A9p%C3%BClet%2C%206723" target="_blank" rel="noopener noreferrer">Megnyitom a térképen</a>
-          </div>
+          <form class="cta-form">
+            <label>
+              Edző neve
+              <input type="text" placeholder="Teljes név" />
+            </label>
+            <label>
+              Email
+              <input type="email" placeholder="email@pelda.hu" />
+            </label>
+            <label>
+              Becsült aktív vendégek száma
+              <select>
+                <option>1-10</option>
+                <option>11-15</option>
+                <option>16-25</option>
+                <option>25+</option>
+              </select>
+            </label>
+            <button class="btn primary" type="submit">Fiók létrehozása</button>
+            <p class="card-meta">A belépés előfizetéshez kötött.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="#">
+            <span class="brand-mark">E+</span>
+            <span class="brand-text">Energize</span>
+          </a>
+          <p>Edzői admin egy helyen, hogy több időd maradjon edzeni.</p>
+        </div>
+        <div>
+          <h4>Kapcsolat</h4>
+          <p>hello@energize.hu</p>
+          <p>Budapest · Online</p>
+        </div>
+        <div>
+          <h4>Gyors linkek</h4>
+          <a href="#features">Funkciók</a>
+          <a href="#arak">Árak</a>
+          <a href="#regisztracio">Regisztráció</a>
         </div>
       </div>
-    </div>
-  </section>
+      <p class="footer-note">© 2024 Energize. Minden jog fenntartva.</p>
+    </footer>
 
-  <!-- MOTIVÁCIÓ / BIZALOMÉPÍTÉS -->
-  <section id="motivacio">
-    <div class="container">
-      <div class="card pad">
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Motiváció</span>
-        <h2 class="section-title">A változás nem varázslat, hanem következetesség.</h2>
-        <p class="lead lead-max-85">
-          Nem az a lényeg, hogy mindig tökéletes legyél, hanem hogy legyen egy terv, amit újra és újra meg tudsz csinálni.
-          Ha ma csak egy lépést teszel, az is számít. Én abban segítek, hogy ezek a lépések
-          <b>rendszerré álljanak össze</b>, és ebből jöjjön az eredmény.
-        </p>
-        <div class="heroActions mt-18">
-          <a class="btn" href="#rolam">Vissza a bemutatkozáshoz</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  </main>
-
-  <div class="mobileCta" role="navigation" aria-label="Gyors jelentkezés">
-    <a class="btn btn-primary" href="#jelentkezes">Jelentkezem</a>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footerRow">
-        <div class="stack footer-stack">
-          <div class="footer-brand">
-            <span class="mark" aria-hidden="true"></span>
-            <b class="text-strong">Prikk Botond</b>
-          </div>
-          <div>Kapcsolat: <a href="mailto:botond.prikk@gmail.com" class="footer-link">botond.prikk@gmail.com</a></div>
-          <div><a href="adatkezeles.html" class="footer-link">Adatkezelési tájékoztató</a></div>
-          <div class="text-dim">© <span id="year"></span> Minden jog fenntartva.</div>
-        </div>
-
-        <a class="ig" href="https://www.instagram.com/botondprikk/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 4a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.2-.9a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/>
-          </svg>
-          <span>Instagram</span>
-        </a>
-
-        <div class="footer-legal">
-          Jogi: Az oldalon található tartalom tájékoztató jellegű. Az edzésprogram és terhelés egyéni felmérés alapján kerül kialakításra.
-        </div>
-      </div>
-    </div>
-  </footer>
-  <script src="scripts/main.js" defer></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

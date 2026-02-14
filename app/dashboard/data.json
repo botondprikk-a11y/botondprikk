@@ -1,0 +1,207 @@
+{
+  "kpis": [
+    {
+      "label": "Aktiv vendegek",
+      "value": "24",
+      "note": "18 online · 6 offline",
+      "trend": "+3 ezen a heten"
+    },
+    {
+      "label": "Check-in hianyzik (heti)",
+      "value": "5",
+      "note": "hétvegen zarul",
+      "trend": "-2 az elozo hethez"
+    },
+    {
+      "label": "Fizetes esedekes",
+      "value": "4",
+      "note": "kovetkezo 7 nap",
+      "trend": "2 keses"
+    },
+    {
+      "label": "Lejart / 1 alkalom maradt",
+      "value": "3",
+      "note": "offline berlet",
+      "trend": "1 megujitas var"
+    }
+  ],
+  "todos": {
+    "checkin": [
+      {
+        "name": "Nagy Dora",
+        "status": "Hianyzik",
+        "level": "warn",
+        "last": "2 napja",
+        "action": "Megnyitas"
+      },
+      {
+        "name": "Varga Marton",
+        "status": "Utolso ora",
+        "level": "warn",
+        "last": "1 napja",
+        "action": "Megnyitas"
+      },
+      {
+        "name": "Kiss Lili",
+        "status": "Emlkezteto",
+        "level": "info",
+        "last": "ma",
+        "action": "Megnyitas"
+      },
+      {
+        "name": "Szabo Adela",
+        "status": "Hianyzik",
+        "level": "warn",
+        "last": "3 napja",
+        "action": "Megnyitas"
+      },
+      {
+        "name": "Horvath Lilla",
+        "status": "Hianyzik",
+        "level": "warn",
+        "last": "2 napja",
+        "action": "Megnyitas"
+      }
+    ],
+    "payment": [
+      {
+        "name": "Fazekas Milan",
+        "status": "Esedekes",
+        "level": "warn",
+        "last": "holnap",
+        "action": "Megnyitas"
+      },
+      {
+        "name": "Toth Erika",
+        "status": "Keses",
+        "level": "danger",
+        "last": "4 napja",
+        "action": "Megnyitas"
+      },
+      {
+        "name": "Csernai Zsofi",
+        "status": "Esedekes",
+        "level": "warn",
+        "last": "2 nap",
+        "action": "Megnyitas"
+      },
+      {
+        "name": "Sipos Gabor",
+        "status": "Rendben",
+        "level": "ok",
+        "last": "5 nap",
+        "action": "Megnyitas"
+      },
+      {
+        "name": "Kertesz Adam",
+        "status": "Esedekes",
+        "level": "warn",
+        "last": "ma",
+        "action": "Megnyitas"
+      }
+    ],
+    "pass": [
+      {
+        "name": "Toth Erika",
+        "status": "1 alkalom",
+        "level": "warn",
+        "last": "Pentek",
+        "action": "Megnyitas"
+      },
+      {
+        "name": "Fazekas Milan",
+        "status": "Lejart",
+        "level": "danger",
+        "last": "Kedd",
+        "action": "Megnyitas"
+      },
+      {
+        "name": "Kiss Lili",
+        "status": "2 alkalom",
+        "level": "info",
+        "last": "Szerda",
+        "action": "Megnyitas"
+      },
+      {
+        "name": "Miko Zsuzsa",
+        "status": "1 alkalom",
+        "level": "warn",
+        "last": "Heto",
+        "action": "Megnyitas"
+      },
+      {
+        "name": "Papp Levi",
+        "status": "Lejart",
+        "level": "danger",
+        "last": "Csutortok",
+        "action": "Megnyitas"
+      }
+    ]
+  },
+  "guests": [
+    {
+      "name": "Nagy Dora",
+      "type": "Online",
+      "checkin": "Hianyzik",
+      "pass": "-",
+      "last": "2 napja",
+      "payment": "Esedekes"
+    },
+    {
+      "name": "Varga Marton",
+      "type": "Online",
+      "checkin": "Keszen",
+      "pass": "-",
+      "last": "tegnap",
+      "payment": "Rendben"
+    },
+    {
+      "name": "Horvath Lilla",
+      "type": "Online",
+      "checkin": "Keszen",
+      "pass": "-",
+      "last": "tegnap",
+      "payment": "Esedekes"
+    },
+    {
+      "name": "Kiss Lili",
+      "type": "Offline",
+      "checkin": "-",
+      "pass": "2 alkalom",
+      "last": "3 napja",
+      "payment": "Rendben"
+    },
+    {
+      "name": "Toth Erika",
+      "type": "Offline",
+      "checkin": "-",
+      "pass": "1 alkalom",
+      "last": "1 napja",
+      "payment": "Keses"
+    },
+    {
+      "name": "Fazekas Milan",
+      "type": "Offline",
+      "checkin": "-",
+      "pass": "Lejart",
+      "last": "5 napja",
+      "payment": "Esedekes"
+    },
+    {
+      "name": "Szabo Adela",
+      "type": "Online",
+      "checkin": "Hianyzik",
+      "pass": "-",
+      "last": "2 napja",
+      "payment": "Rendben"
+    },
+    {
+      "name": "Csernai Zsofi",
+      "type": "Online",
+      "checkin": "Keszen",
+      "pass": "-",
+      "last": "ma",
+      "payment": "Esedekes"
+    }
+  ]
+}
