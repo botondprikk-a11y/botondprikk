@@ -1,0 +1,158 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  TRAINER
+  CLIENT
+  ADMIN
+}
+
+enum TrainerStatus {
+  ACTIVE
+  SUSPENDED
+}
+
+enum TrainerPlan {
+  FREE
+  PRO
+  ENTERPRISE
+}
+
+enum ClientType {
+  ONLINE
+  OFFLINE
+}
+
+enum ClientStatus {
+  ACTIVE
+  EXPIRED
+}
+
+enum InvitationStatus {
+  PENDING
+  ACCEPTED
+  EXPIRED
+  REVOKED
+}
+
+enum CalendarEventStatus {
+  PLANNED
+  DONE
+  CANCELED
+}
+
+enum ReminderStatus {
+  PENDING
+  SENT
+  FAILED
+}
+
+enum GoogleSyncStatus {
+  PENDING
+  SYNCED
+  FAILED
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  role         Role
+  createdAt    DateTime @default(now())
+
+  trainer Trainer?
+  client  Client?
+}
+
+model Trainer {
+  id                String        @id @default(cuid())
+  userId            String        @unique
+  status            TrainerStatus @default(ACTIVE)
+  plan              TrainerPlan   @default(FREE)
+  billingCustomerId String?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  user        User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  clients     Client[]
+  invitations Invitation[]
+  calendarEvents CalendarEvent[]
+  googleAccount TrainerGoogleAccount?
+}
+
+model Client {
+  id           String       @id @default(cuid())
+  trainerId    String
+  userId       String?      @unique
+  type         ClientType   @default(ONLINE)
+  status       ClientStatus @default(ACTIVE)
+  fullName     String
+  email        String?
+  accessEndsAt DateTime?
+  sharedNotes  String?
+  kcalGoal     Int?
+  proteinG     Int?
+  carbsG       Int?
+  fatG         Int?
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  trainer Trainer @relation(fields: [trainerId], references: [id], onDelete: Cascade)
+  user    User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+  calendarEvents CalendarEvent[]
+}
+
+model Invitation {
+  id         String           @id @default(cuid())
+  trainerId  String
+  email      String
+  token      String           @unique
+  status     InvitationStatus @default(PENDING)
+  expiresAt  DateTime
+  acceptedAt DateTime?
+  createdAt  DateTime         @default(now())
+
+  trainer Trainer @relation(fields: [trainerId], references: [id], onDelete: Cascade)
+}
+
+model TrainerGoogleAccount {
+  id           String   @id @default(cuid())
+  trainerId    String   @unique
+  email        String?
+  accessToken  String
+  refreshToken String
+  expiresAt    DateTime?
+  calendarId   String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  trainer Trainer @relation(fields: [trainerId], references: [id], onDelete: Cascade)
+}
+
+model CalendarEvent {
+  id                    String             @id @default(cuid())
+  trainerId             String
+  clientId              String
+  title                 String
+  startsAt              DateTime
+  endsAt                DateTime
+  status                CalendarEventStatus @default(PLANNED)
+  paymentDue            Boolean            @default(false)
+  workoutReminderStatus ReminderStatus?
+  paymentReminderStatus ReminderStatus?
+  googleEventId         String?
+  googleSyncStatus      GoogleSyncStatus   @default(PENDING)
+  googleSyncError       String?
+  lastSyncedAt          DateTime?
+  createdAt             DateTime           @default(now())
+  updatedAt             DateTime           @updatedAt
+
+  trainer Trainer @relation(fields: [trainerId], references: [id], onDelete: Cascade)
+  client  Client  @relation(fields: [clientId], references: [id], onDelete: Cascade)
+}
